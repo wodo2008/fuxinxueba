@@ -9,7 +9,7 @@ class Company(models.Model):
     logo_id = models.IntegerField
     name = models.CharField(max_length=32)
     info = models.TextField()
-    logo = models.ImageField()
+
 
 class Eec_alumni(models.Model):
     eid = models.AutoField(primary_key=True)
