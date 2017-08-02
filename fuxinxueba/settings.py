@@ -25,7 +25,7 @@ SECRET_KEY = 'gx-vlnmk-h_qt7to5zp#1*a^kc#77g%xt^lymsb@3^=id^pm+b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://106.14.220.141"]
 
 
 # Application definition
