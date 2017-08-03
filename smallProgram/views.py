@@ -17,8 +17,7 @@ def getCompanyList(request):
     # elif request.method == 'POST':
     #     for k in request.data:
     #         dict[k] = request.data[k]
-    cid = request.GET.get('cid')
-    data = Company.objects.filter(cid=cid)
+    data = Company.objects.all()
     s = serializer(data)
     response_data = {}
     response_data['data'] = s
@@ -26,13 +25,40 @@ def getCompanyList(request):
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 def getExcAlumniList(request):
-    pass
+    cid = request.GET.get('cid')
+    data = Eec_alumni.objects.get(cid=cid)
+    s = serializer(data)
+    response_data = {}
+    response_data['data'] = s
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
 
 def getPushPositionList(request):
-    pass
+    cid = request.GET.get('cid')
+    data = Push_position.objects.get(cid=cid)
+    s = serializer(data)
+    response_data = {}
+    response_data['data'] = s
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
 
 def getExcAlumniDetail(request):
-    pass
+    eid = request.GET.get('eid')
+    data = Eec_alumni.objects.get(eid=eid)
+    s = serializer(data)
+    response_data = {}
+    response_data['data'] = s
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
 
 def getPushPositionDetail(request):
-    pass
+    pid = request.GET.get('pid')
+    data = Push_position.objects.get(pid=pid)
+    s = serializer(data)
+    response_data = {}
+    response_data['data'] = s
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
