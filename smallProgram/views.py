@@ -6,6 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from smallProgram.models import Company,Eec_alumni,Push_position
+from django.forms.models import model_to_dict
 import json
 
 def getCompanyList(request):
@@ -17,7 +18,7 @@ def getCompanyList(request):
     #         dict[k] = request.data[k]
     cid = request.GET.get('cid')
     data = Company.objects.filter(cid=cid)
-    s = serializers.serialize(data)
+    s = serializers.serialize('json',data)
     # response_data = {}
     # response_data['data'] = data
     # response_data['message'] = 'Ok'
