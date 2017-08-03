@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+import json
 
 def getCompanyList(request):
     # if request.method == 'GET':
@@ -14,5 +15,8 @@ def getCompanyList(request):
     #     for k in request.data:
     #         dict[k] = request.data[k]
     cid = request.GET.get('cid')
-    BJradio_list = serializers.serialize("json", Company.objects.filter(cid=cid))
-    return HttpResponse(BJradio_list, content_type='application/json; charset=utf-8')
+    data = Company.objects.filter(cid=cid)
+    response_data = {}
+    response_data['data'] = data
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
