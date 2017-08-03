@@ -17,7 +17,8 @@ def getCompanyList(request):
     #         dict[k] = request.data[k]
     cid = request.GET.get('cid')
     data = Company.objects.filter(cid=cid)
-    response_data = {}
-    response_data['data'] = data
-    response_data['message'] = 'Ok'
-    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    s = serializers.serialize(data)
+    # response_data = {}
+    # response_data['data'] = data
+    # response_data['message'] = 'Ok'
+    return HttpResponse(s, content_type='application/json; charset=utf-8')
