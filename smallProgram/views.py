@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from dss.Serializer import serializer
 from smallProgram.models import Company,Eec_alumni,Push_position
 from django.forms.models import model_to_dict
 import json
