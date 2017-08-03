@@ -32,7 +32,7 @@ class Push_position(models.Model):
     detail = models.TextField()
     info = models.CharField(max_length=32)
     location = models.CharField(max_length=32)
-    publish_time = models.TimeField()
+    publish_time = models.DateTimeField(auto_now_add=True)
     keywords = models.CharField(max_length=32)
     requirement = models.TextField()
     pluses = models.TextField()
