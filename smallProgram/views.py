@@ -4,11 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from django.http import HttpResponse
 
-@api_view(['POST','GET'])
 def getCompanyList(request,cid):
     # if request.method == 'GET':
     #     for k in request.query_params:
