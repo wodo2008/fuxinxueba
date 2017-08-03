@@ -19,7 +19,7 @@ def getCompanyList(request):
     #         dict[k] = request.data[k]
     cid = request.GET.get('cid')
     data = Company.objects.filter(cid=cid)
-    s = serializers.serialize('json',data)
+    s = serializer('json',data)
     # response_data = {}
     # response_data['data'] = data
     # response_data['message'] = 'Ok'
