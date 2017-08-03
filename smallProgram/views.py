@@ -22,6 +22,8 @@ def getCompanyList(request):
     response_data = {}
     response_data['data'] = s
     response_data['message'] = 'Ok'
+    response_data['pageSize'] = 10
+    response_data['pageNo'] = 1
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 def getExcAlumniList(request):
@@ -31,6 +33,8 @@ def getExcAlumniList(request):
     response_data = {}
     response_data['data'] = s
     response_data['message'] = 'Ok'
+    response_data['pageSize'] = 10
+    response_data['pageNo'] = 1
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
@@ -41,6 +45,8 @@ def getPushPositionList(request):
     response_data = {}
     response_data['data'] = s
     response_data['message'] = 'Ok'
+    response_data['pageSize'] = 10
+    response_data['pageNo'] = 1
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
@@ -51,6 +57,8 @@ def getExcAlumniDetail(request):
     response_data = {}
     response_data['data'] = s
     response_data['message'] = 'Ok'
+    response_data['pageSize'] = 10
+    response_data['pageNo'] = 1
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
@@ -61,4 +69,6 @@ def getPushPositionDetail(request):
     response_data = {}
     response_data['data'] = s
     response_data['message'] = 'Ok'
+    response_data['pageSize'] = 10
+    response_data['pageNo'] = 1
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
