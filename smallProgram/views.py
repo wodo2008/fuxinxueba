@@ -20,7 +20,19 @@ def getCompanyList(request):
     cid = request.GET.get('cid')
     data = Company.objects.filter(cid=cid)
     s = serializer(data)
-    # response_data = {}
-    # response_data['data'] = data
-    # response_data['message'] = 'Ok'
-    return HttpResponse(s, content_type='application/json; charset=utf-8')
+    response_data = {}
+    response_data['data'] = s
+    response_data['message'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+def getExcAlumniList(request):
+    pass
+
+def getPushPositionList(request):
+    pass
+
+def getExcAlumniDetail(request):
+    pass
+
+def getPushPositionDetail(request):
+    pass
