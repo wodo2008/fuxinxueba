@@ -23,7 +23,7 @@ def getCompanyList(request):
     pageSize = request.GET.get('pageSize')
 
     data = Company.objects.all()
-    totalNum = Company.objects.count()
+    totalNum = Company.objects.get(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
 
     try:
@@ -49,7 +49,7 @@ def getExcAlumniList(request):
     pageNo = request.GET.get('pageNo')
     pageSize = request.GET.get('pageSize')
     data = Eec_alumni.objects.get(cid=cid)
-    totalNum = Eec_alumni.objects.count(cid=cid)
+    totalNum = Eec_alumni.objects.get(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
     try:
         pdata = paginator.page(pageNo)
