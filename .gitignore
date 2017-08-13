@@ -3,5 +3,6 @@
 .idea/modules.xml
 .idea/fuxinxueba.iml
 .idea/vcs.xml
+nohup.out
 *.pyc
 *.xml
