@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from dss.Serializer import serializer
 from smallProgram.models import Company,Eec_alumni,Push_position
 from django.forms.models import model_to_dict
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 
 def getCompanyList(request):
@@ -17,36 +18,81 @@ def getCompanyList(request):
     # elif request.method == 'POST':
     #     for k in request.data:
     #         dict[k] = request.data[k]
+
+    pageNo = request.GET.get('pageNo')
+    pageSize = request.GET.get('pageSize')
+
     data = Company.objects.all()
-    s = serializer(data)
+    totalNum = Company.objects.count()
+    paginator = Paginator(data, int(pageSize))
+
+    try:
+        pdata = paginator.page(pageNo)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        pdata = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        pdata = paginator.page(paginator.num_pages)
+
+    s = serializer(pdata)
     response_data = {}
     response_data['data'] = s
     response_data['success'] = 'Ok'
-    response_data['pageSize'] = 10
-    response_data['pageNo'] = 1
+    response_data['totalNum'] = totalNum
+    response_data['totalPage'] = totalNum / pageSize + 1
+    response_data['currentPage'] = pageNo
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 def getExcAlumniList(request):
     cid = request.GET.get('cid')
+    pageNo = request.GET.get('pageNo')
+    pageSize = request.GET.get('pageSize')
     data = Eec_alumni.objects.get(cid=cid)
-    s = serializer(data)
+    totalNum = Eec_alumni.objects.count(cid=cid)
+    paginator = Paginator(data, int(pageSize))
+    try:
+        pdata = paginator.page(pageNo)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        pdata = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        pdata = paginator.page(paginator.num_pages)
+
+    s = serializer(pdata)
     response_data = {}
     response_data['data'] = s
     response_data['success'] = 'Ok'
-    response_data['pageSize'] = 10
-    response_data['pageNo'] = 1
+    response_data['totalNum'] = totalNum
+    response_data['totalPage'] = totalNum / pageSize + 1
+    response_data['currentPage'] = pageNo
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
 def getPushPositionList(request):
     cid = request.GET.get('cid')
+    pageNo = request.GET.get('pageNo')
+    pageSize = request.GET.get('pageSize')
     data = Push_position.objects.get(cid=cid)
-    s = serializer(data)
+    totalNum = Push_position.objects.count(cid=cid)
+    paginator = Paginator(data, int(pageSize))
+    try:
+        pdata = paginator.page(pageNo)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        pdata = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        pdata = paginator.page(paginator.num_pages)
+
+    s = serializer(pdata)
     response_data = {}
     response_data['data'] = s
     response_data['success'] = 'Ok'
-    response_data['pageSize'] = 10
-    response_data['pageNo'] = 1
+    response_data['totalNum'] = totalNum
+    response_data['totalPage'] = totalNum / pageSize + 1
+    response_data['currentPage'] = pageNo
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
