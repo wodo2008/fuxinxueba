@@ -75,7 +75,7 @@ def getPushPositionList(request):
     pageNo = request.GET.get('pageNo')
     pageSize = request.GET.get('pageSize')
     data = Push_position.objects.get(cid=cid)
-    totalNum = Push_position.objects.count(cid=cid)
+    totalNum = Push_position.objects.get(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
     try:
         pdata = paginator.page(pageNo)
