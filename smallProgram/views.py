@@ -19,8 +19,8 @@ def getCompanyList(request):
     #     for k in request.data:
     #         dict[k] = request.data[k]
 
-    pageNo = request.GET.get('pageNo')
-    pageSize = request.GET.get('pageSize')
+    pageNo = request.GET.get('pageNo',1)
+    pageSize = request.GET.get('pageSize',10)
 
     data = Company.objects.all()
     totalNum = Company.objects.filter(cid=cid).count()
@@ -46,8 +46,8 @@ def getCompanyList(request):
 
 def getExcAlumniList(request):
     cid = request.GET.get('cid')
-    pageNo = request.GET.get('pageNo')
-    pageSize = request.GET.get('pageSize')
+    pageNo = request.GET.get('pageNo',1)
+    pageSize = request.GET.get('pageSize',10)
     data = Eec_alumni.objects.get(cid=cid)
     totalNum = Eec_alumni.objects.filter(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
@@ -72,8 +72,8 @@ def getExcAlumniList(request):
 
 def getPushPositionList(request):
     cid = request.GET.get('cid')
-    pageNo = request.GET.get('pageNo')
-    pageSize = request.GET.get('pageSize')
+    pageNo = request.GET.get('pageNo',1)
+    pageSize = request.GET.get('pageSize',10)
     data = Push_position.objects.get(cid=cid)
     totalNum = Push_position.objects.filter(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
