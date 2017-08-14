@@ -48,7 +48,7 @@ def getExcAlumniList(request):
     cid = request.GET.get('cid')
     pageNo = request.GET.get('pageNo',1)
     pageSize = request.GET.get('pageSize',10)
-    data = Eec_alumni.objects.get(cid=cid)
+    data = Eec_alumni.objects.all()
     totalNum = Eec_alumni.objects.filter(cid=cid).count()
     print data
     paginator = Paginator(data, int(pageSize))
