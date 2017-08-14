@@ -27,7 +27,7 @@ def getCompanyList(request):
     paginator = Paginator(data, int(pageSize))
 
     try:
-        pdata = paginator.page(pageNo)
+        pdata = paginator.page(int(pageNo))
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         pdata = paginator.page(1)
@@ -52,7 +52,7 @@ def getExcAlumniList(request):
     totalNum = Eec_alumni.objects.filter(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
     try:
-        pdata = paginator.page(pageNo)
+        pdata = paginator.page(int(pageNo))
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         pdata = paginator.page(1)
@@ -78,7 +78,7 @@ def getPushPositionList(request):
     totalNum = Push_position.objects.filter(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
     try:
-        pdata = paginator.page(pageNo)
+        pdata = paginator.page(int(pageNo))
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         pdata = paginator.page(1)
