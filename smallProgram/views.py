@@ -48,7 +48,7 @@ def getExcAlumniList(request):
     cid = request.GET.get('cid')
     pageNo = request.GET.get('pageNo',1)
     pageSize = request.GET.get('pageSize',10)
-    data = Eec_alumni.objects.all()
+    data = Eec_alumni.objects.filter(cid=cid)
     totalNum = Eec_alumni.objects.filter(cid=cid).count()
     print data
     paginator = Paginator(data, int(pageSize))
@@ -75,7 +75,7 @@ def getPushPositionList(request):
     cid = request.GET.get('cid')
     pageNo = request.GET.get('pageNo',1)
     pageSize = request.GET.get('pageSize',10)
-    data = Push_position.objects.get(cid=cid)
+    data = Push_position.objects.filter(cid=cid)
     totalNum = Push_position.objects.filter(cid=cid).count()
     paginator = Paginator(data, int(pageSize))
     try:
