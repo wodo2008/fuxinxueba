@@ -50,6 +50,7 @@ def getExcAlumniList(request):
     pageSize = request.GET.get('pageSize',10)
     data = Eec_alumni.objects.get(cid=cid)
     totalNum = Eec_alumni.objects.filter(cid=cid).count()
+    print data
     paginator = Paginator(data, int(pageSize))
     try:
         pdata = paginator.page(int(pageNo))
