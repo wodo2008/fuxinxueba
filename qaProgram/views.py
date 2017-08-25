@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from dss.Serializer import serializer
-from smallProgram.models import Company,Eec_alumni,Push_position
+from qaProgram.models import Question,Answer
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
@@ -15,8 +15,8 @@ def get_stu_question_list(request):
     pageNo = request.GET.get('pageNo', 1)
     pageSize = request.GET.get('pageSize', 10)
 
-    data = Company.objects.all()
-    totalNum = Company.objects.filter().count()
+    data = Question.objects.all()
+    totalNum = Question.objects.filter().count()
     paginator = Paginator(data, int(pageSize))
 
     try:
