@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^smallprogram/admin/', admin.site.urls),
     url(r'', include('smallProgram.urls')),
+    url(r'', include('qaProgram.urls')),
 ]
