@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^smallprogram/submit_answer',views.submit_answer),
     url(r'^smallprogram/submit_question',views.submit_question),
     url(r'^smallprogram/getGradDetail',views.getGradDetail),
-
+    url(r'^smallprogram/getPic',views.getPic),
 ]

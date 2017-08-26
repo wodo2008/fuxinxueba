@@ -11,6 +11,7 @@ from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import time
+import os
 
 def get_stu_question_list(request):
     pageNo = int(request.GET.get('pageNo', 1))
@@ -144,4 +145,15 @@ def submit_answer(request):
     models.Answer.objects.create(**dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
+def getPic(request):
+    pname = request.GET.get('pname', None)
+    if not pname:
+        response_data = {}
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'param none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    base_path = '/home/app/static/picture'
+    pic_path = os.path.join(base_path,pname)
+    image_data = open(pic_path, "rb").read()
+    return HttpResponse(image_data, mimetype="image/png")
 
