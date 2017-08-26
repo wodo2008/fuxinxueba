@@ -24,7 +24,7 @@ class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
     avatar = models.IntegerField(default=0)
     name = models.CharField(max_length=32,default='')
-    compay = models.CharField(max_length=32,default='')
+    company = models.CharField(max_length=32,default='')
     school = models.CharField(max_length=32,default='')
     specialty = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32,default='')
