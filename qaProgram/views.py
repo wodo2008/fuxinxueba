@@ -27,12 +27,17 @@ def get_stu_question_list(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         pdata = paginator.page(paginator.num_pages)
-    print pdata
+    flist = []
     for d in pdata:
-        print 'd:',d
-        print d.qid
-        print d.content
-    s = serializer(pdata)
+        fdata = {}
+        qid = d.qid
+        status = d.status
+        fdata['qid'] = qid
+        fdata['qcontent'] = d.content
+        if status:
+            ans = Answer.objects.get(eid=eid)
+            fdata['acontent'] = ans.content if ans else ''
+    s = serializer(fdata)
     response_data = {}
     response_data['data'] = s
     response_data['success'] = 'Ok'
