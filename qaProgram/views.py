@@ -116,9 +116,30 @@ def getGradDetail(request):
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 
-def submit_answer(request):
-    pass
-
 def submit_question(request):
-    pass
-    # toUserName =
+    request.REQUEST.get('name')
+    content = ''
+    ask_time = int(time.time())
+    asker_openid = ''
+    grad_weixin_id = ''
+    dic = {}
+    dic['content'] = content
+    dic['ask_time'] = ask_time
+    dic['asker_openid'] = asker_openid
+    dic['grad_weixin_id'] = grad_weixin_id
+    models.Question.objects.create(**dic)
+    return HttpResponse('success', content_type='application/json; charset=utf-8')
+
+
+def submit_answer(request):
+    qid = 0
+    content = ''
+    answer_time = int(time.time())
+    grad_weixin_id = ''
+    dic = {}
+    dic['qid'] = qid
+    dic['content'] = content
+    dic['answer_time'] = answer_time
+    dic['grad_weixin_id'] = grad_weixin_id
+    models.Answer.objects.create(**dic)
+    return HttpResponse('success', content_type='application/json; charset=utf-8')
