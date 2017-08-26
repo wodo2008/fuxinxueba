@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from dss.Serializer import serializer
-from qaProgram.models import Question,Answer,GradDetail
+from qaProgram.models import Question,Answer,GradDetail,Picture
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
