@@ -22,7 +22,7 @@ class Answer(models.Model):
 
 class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
-    headpic_id = models.IntegerField
+    avatar = models.IntegerField
     name = models.CharField(max_length=32,default='')
     compay = models.CharField(max_length=32,default='')
     school = models.CharField(max_length=32,default='')
