@@ -15,7 +15,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
     aid = models.AutoField(primary_key=True)
-    qid = models.models.IntegerField(default=0)
+    qid = models.IntegerField(default=0)
     content = models.TextField()
     answer_time = models.IntegerField(default=0)
     grad_weixin_id = models.CharField(max_length=32,default='')
