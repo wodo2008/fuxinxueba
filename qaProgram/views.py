@@ -152,7 +152,7 @@ def getPic(request):
         response_data['success'] = 'erro'
         response_data['msg'] = 'param none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
-    base_path = '/home/app/fuxinxueba/img'
+    base_path = '/home/app/fuxinxueba'
     pic_path = os.path.join(base_path,pname)
     image_data = open(pic_path, "rb").read()
     return HttpResponse(image_data, content_type="image/png")
