@@ -129,7 +129,7 @@ def submit_question(request):
     dic['ask_time'] = ask_time
     dic['asker_openid'] = asker_openid
     dic['grad_weixin_id'] = grad_weixin_id
-    models.Question.objects.create(**dic)
+    Question.objects.create(**dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
@@ -142,7 +142,7 @@ def submit_answer(request):
     dic['content'] = content
     dic['answer_time'] = answer_time
     dic['grad_weixin_id'] = grad_weixin_id
-    models.Answer.objects.create(**dic)
+    Answer.objects.create(**dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def getPic(request):
