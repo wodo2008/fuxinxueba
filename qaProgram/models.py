@@ -15,7 +15,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
     aid = models.AutoField(primary_key=True)
-    qid = models.ForeignKey("Question",null=True,blank=True)
+    qid = models.models.IntegerField(default=0)
     content = models.TextField()
     answer_time = models.IntegerField(default=0)
     grad_weixin_id = models.CharField(max_length=32,default='')
@@ -29,6 +29,8 @@ class GradDetail(models.Model):
     school = models.CharField(max_length=32,default='')
     specialty = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32,default='')
+    def __unicode__(self):
+        return self.gid
 
 class Picture(models.Model):
     pid = models.AutoField(primary_key=True)
