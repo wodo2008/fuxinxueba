@@ -12,8 +12,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 
 def get_stu_question_list(request):
-    pageNo = request.GET.get('pageNo', 1)
-    pageSize = request.GET.get('pageSize', 10)
+    pageNo = int(request.GET.get('pageNo', 1))
+    pageSize = int(request.GET.get('pageSize', 10))
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not grad_weixin_id:
         response_data = {}
@@ -21,8 +21,8 @@ def get_stu_question_list(request):
         response_data['msg'] = 'grad_weixin none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
-    data = Question.objects.filter(grad_weixin_id = grad_weixin_id)
-    totalNum = Question.objects.filter(grad_weixin_id=grad_weixin_id).count()
+    data = Question.objects.filter(grad_weixin_id = grad_weixin_id,status=True)
+    totalNum = Question.objects.filter(grad_weixin_id=grad_weixin_id,status=True).count()
     paginator = Paginator(data, int(pageSize))
 
     try:
@@ -57,8 +57,8 @@ def get_stu_question_list(request):
 
 
 def get_grad_question_list(request):
-    pageNo = request.GET.get('pageNo', 1)
-    pageSize = request.GET.get('pageSize', 10)
+    pageNo = int(request.GET.get('pageNo', 1))
+    pageSize = int(request.GET.get('pageSize', 10))
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not grad_weixin_id:
         response_data = {}
