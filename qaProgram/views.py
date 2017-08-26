@@ -16,6 +16,7 @@ def get_stu_question_list(request):
     pageSize = request.GET.get('pageSize', 10)
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not grad_weixin_id:
+        response_data = {}
         response_data['success'] = 'erro'
         response_data['msg'] = 'grad_weixin none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
@@ -59,6 +60,7 @@ def get_grad_question_list(request):
     pageSize = request.GET.get('pageSize', 10)
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not grad_weixin_id:
+        response_data = {}
         response_data['success'] = 'erro'
         response_data['msg'] = 'grad_weixin none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
@@ -87,6 +89,7 @@ def get_answer(request):
     qid = request.GET.get('question_id', None)
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not qid or not grad_weixin_id:
+        response_data = {}
         response_data['success'] = 'erro'
         response_data['msg'] = 'param none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
