@@ -22,9 +22,15 @@ class Answer(models.Model):
 
 class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
-    avatar = models.IntegerField(default=0)
+    avatar = models.ForeignKey("Picture",null=True,blank=True)
     name = models.CharField(max_length=32,default='')
     company = models.CharField(max_length=32,default='')
     school = models.CharField(max_length=32,default='')
     specialty = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32,default='')
+
+class Picture(models.Model):
+    pid = models.AutoField(primary_key=True)
+    img = models.ImageField(upload_to='img')
+    name = models.CharField(max_length=20)
+

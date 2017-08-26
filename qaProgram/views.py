@@ -10,6 +10,7 @@ from qaProgram.models import Question,Answer,GradDetail
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
+import time
 
 def get_stu_question_list(request):
     pageNo = int(request.GET.get('pageNo', 1))
