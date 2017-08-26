@@ -23,7 +23,7 @@ class Answer(models.Model):
 class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
     #avatar = models.ForeignKey("Picture",null=True,blank=True)
-    avatar = models.ImageField()
+    avatar = models.ImageField(upload_to='img')
     name = models.CharField(max_length=32,default='')
     company = models.CharField(max_length=32,default='')
     school = models.CharField(max_length=32,default='')
@@ -32,6 +32,6 @@ class GradDetail(models.Model):
 
 class Picture(models.Model):
     pid = models.AutoField(primary_key=True)
-    img = models.ImageField()
+    img = models.ImageField(upload_to='img')
     name = models.CharField(max_length=20)
 
