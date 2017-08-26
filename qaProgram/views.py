@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from dss.Serializer import serializer
-from qaProgram.models import Question,Answer
+from qaProgram.models import Question,Answer,GradDetail
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
@@ -40,6 +40,7 @@ def get_stu_question_list(request):
         status = d.status
         fdata['qid'] = qid
         fdata['qcontent'] = d.content
+        fdata['status'] = status
         if status:
             ans = Answer.objects.get(qid=qid)
             fdata['acontent'] = ans.content if ans else ''
@@ -99,6 +100,21 @@ def get_answer(request):
     response_data['data'] = s
     response_data['success'] = 'Ok'
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+def getGradDetail(request):
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    if not grad_weixin_id:
+        response_data = {}
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'param none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    gdetail = GradDetail.objects.get(grad_weixin_id=grad_weixin_id)
+    s = serializer(gdetail)
+    response_data = {}
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
 
 def submit_answer(request):
     pass
