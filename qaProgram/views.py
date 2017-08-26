@@ -30,8 +30,8 @@ def get_stu_question_list(request):
     print pdata
     for d in pdata:
         print 'd:',d
-        print d['qid']
-        print d['content']
+        print d.qid
+        print d.content
     s = serializer(pdata)
     response_data = {}
     response_data['data'] = s
