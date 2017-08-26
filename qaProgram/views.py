@@ -14,9 +14,14 @@ import json
 def get_stu_question_list(request):
     pageNo = request.GET.get('pageNo', 1)
     pageSize = request.GET.get('pageSize', 10)
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    if not grad_weixin_id:
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'grad_weixin none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
-    data = Question.objects.all()
-    totalNum = Question.objects.filter().count()
+    data = Question.objects.filter(grad_weixin_id = grad_weixin_id)
+    totalNum = Question.objects.filter(grad_weixin_id=grad_weixin_id).count()
     paginator = Paginator(data, int(pageSize))
 
     try:
@@ -37,11 +42,64 @@ def get_stu_question_list(request):
         if status:
             ans = Answer.objects.get(qid=qid)
             fdata['acontent'] = ans.content if ans else ''
-    s = serializer(fdata)
+        flist.append(fdata)
+    s = serializer(flist)
     response_data = {}
     response_data['data'] = s
     response_data['success'] = 'Ok'
-    response_data['totalNum'] = totalNum
-    response_data['totalPage'] = totalNum / pageSize + 1
-    response_data['currentPage'] = pageNo
+    hasmore = False
+    if pageNo * pageSize < totalNum:
+        hasmore = True
+    response_data['hasmore'] = hasmore
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+
+def get_grad_question_list(request):
+    pageNo = request.GET.get('pageNo', 1)
+    pageSize = request.GET.get('pageSize', 10)
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    if not grad_weixin_id:
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'grad_weixin none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    data = Question.objects.filter(grad_weixin_id=grad_weixin_id,status=False)
+    totalNum = Question.objects.filter(grad_weixin_id=grad_weixin_id,status=False).count()
+    paginator = Paginator(data, int(pageSize))
+    try:
+        pdata = paginator.page(int(pageNo))
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        pdata = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        pdata = paginator.page(paginator.num_pages)
+    s = serializer(pdata)
+    response_data = {}
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    hasmore = False
+    if pageNo * pageSize < totalNum:
+        hasmore = True
+    response_data['hasmore'] = hasmore
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+def get_answer(request):
+    qid = request.GET.get('question_id', None)
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    if not qid or not grad_weixin_id:
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'param none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    ans = Answer.objects.get(qid=qid,grad_weixin_id=grad_weixin_id)
+    s = serializer(ans)
+    response_data = {}
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+def submit_answer(request):
+    pass
+
+def submit_question(request):
+    pass
+    # toUserName =
