@@ -155,5 +155,5 @@ def getPic(request):
     base_path = '/home/app/static/picture'
     pic_path = os.path.join(base_path,pname)
     image_data = open(pic_path, "rb").read()
-    return HttpResponse(image_data, mimetype="image/png")
+    return HttpResponse(image_data, content_type="image/png")
 
