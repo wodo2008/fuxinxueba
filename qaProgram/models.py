@@ -9,7 +9,7 @@ class Question(models.Model):
     title = models.CharField(max_length=32,default='')
     content = models.TextField()
     status = models.BooleanField(default=False)
-    ask_time = models.IntegerField
+    ask_time = models.IntegerField(default=0)
     asker_openid = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32)
 
@@ -17,12 +17,12 @@ class Answer(models.Model):
     aid = models.AutoField(primary_key=True)
     qid = models.ForeignKey("Question",null=True,blank=True)
     content = models.TextField()
-    answer_time = models.IntegerField
+    answer_time = models.IntegerField(default=0)
     grad_weixin_id = models.CharField(max_length=32,default='')
 
 class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
-    avatar = models.IntegerField
+    avatar = models.IntegerField(default=0)
     name = models.CharField(max_length=32,default='')
     compay = models.CharField(max_length=32,default='')
     school = models.CharField(max_length=32,default='')
