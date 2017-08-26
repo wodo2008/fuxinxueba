@@ -131,7 +131,6 @@ def submit_question(request):
     models.Question.objects.create(**dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
-
 def submit_answer(request):
     qid = 0
     content = ''
@@ -144,3 +143,5 @@ def submit_answer(request):
     dic['grad_weixin_id'] = grad_weixin_id
     models.Answer.objects.create(**dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
+
+
