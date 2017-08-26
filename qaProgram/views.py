@@ -28,7 +28,10 @@ def get_stu_question_list(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         pdata = paginator.page(paginator.num_pages)
     print pdata
-
+    for d in pdata:
+        print 'd:',d
+        print d['qid']
+        print d['content']
     s = serializer(pdata)
     response_data = {}
     response_data['data'] = s
