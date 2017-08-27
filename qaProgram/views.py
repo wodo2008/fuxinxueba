@@ -120,10 +120,11 @@ def getGradDetail(request):
 
 def submit_question(request):
     # request.REQUEST.get('name')
-    content = request.GET.get('content', '')
+    content = request.GET.get('Content', '')
     ask_time = int(time.time())
-    asker_openid = request.GET.get('asker_openid', '')
-    grad_weixin_id = request.GET.get('grad_weixin_id', '')
+    asker_openid = request.GET.get('FromUserName', '')
+    grad_weixin_id = request.GET.get('ToUserName', '')
+    print content,ask_time,asker_openid,grad_weixin_id
     question = Question()
     question.content = content
     question.ask_time = ask_time
