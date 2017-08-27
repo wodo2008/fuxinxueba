@@ -120,17 +120,25 @@ def getGradDetail(request):
 
 def submit_question(request):
     # request.REQUEST.get('name')
-    content = request.GET.get('content', None)
+    content = request.GET.get('content', '')
     ask_time = int(time.time())
-    asker_openid = request.GET.get('asker_openid', None)
-    grad_weixin_id = request.GET.get('grad_weixin_id', None)
-    dic = {}
-    dic['content'] = content
-    dic['ask_time'] = ask_time
-    dic['asker_openid'] = asker_openid
-    dic['grad_weixin_id'] = grad_weixin_id
-    print 'dic:',dic
-    Question.objects.create(dic)
+    asker_openid = request.GET.get('asker_openid', '')
+    grad_weixin_id = request.GET.get('grad_weixin_id', '')
+    question = Question()
+    question.content = content
+    question.ask_time = ask_time
+    question.asker_openid = asker_openid
+    question.grad_weixin_id = grad_weixin_id
+    question.save()
+    #
+    # dic = {}
+    # dic['content'] = content
+    # dic['ask_time'] = ask_time
+    # dic['asker_openid'] = asker_openid
+    # dic['grad_weixin_id'] = grad_weixin_id
+    # print 'dic:',dic
+    # Question.objects.create(dic)
+
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
