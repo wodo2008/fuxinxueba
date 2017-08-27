@@ -119,11 +119,11 @@ def getGradDetail(request):
 
 
 def submit_question(request):
-    request.REQUEST.get('name')
-    content = ''
+    # request.REQUEST.get('name')
+    content = request.GET.get('content', None)
     ask_time = int(time.time())
-    asker_openid = ''
-    grad_weixin_id = ''
+    asker_openid = request.GET.get('asker_openid', None)
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
     dic = {}
     dic['content'] = content
     dic['ask_time'] = ask_time
@@ -133,10 +133,10 @@ def submit_question(request):
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
-    qid = 0
-    content = ''
+    qid = request.GET.get('qid', None)
+    content = request.GET.get('content', None)
     answer_time = int(time.time())
-    grad_weixin_id = ''
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
