@@ -129,7 +129,8 @@ def submit_question(request):
     dic['ask_time'] = ask_time
     dic['asker_openid'] = asker_openid
     dic['grad_weixin_id'] = grad_weixin_id
-    Question.objects.create(**dic)
+    print 'dic:',dic
+    Question.objects.create(dic)
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
