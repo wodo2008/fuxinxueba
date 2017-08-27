@@ -142,10 +142,10 @@ def submit_question(request):
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
-    qid = request.GET.get('qid', None)
-    content = request.GET.get('content', None)
+    qid = request.GET.get('qid', '')
+    content = request.GET.get('content', '')
     answer_time = int(time.time())
-    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    grad_weixin_id = request.GET.get('grad_weixin_id', '')
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
