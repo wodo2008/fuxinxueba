@@ -12,6 +12,15 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 import time
 import os
+import redis
+
+def init_redis(host,port,db,password=None):
+    if password :
+        pool = redis.ConnectionPool(host=host,port=int(port),db=int(db),password=password)
+    else:
+        pool = redis.ConnectionPool(host=host,port=int(port),db=int(db))
+    return redis.Redis(connection_pool=pool)
+
 
 def get_stu_question_list(request):
     pageNo = int(request.GET.get('pageNo', 1))
@@ -120,10 +129,18 @@ def getGradDetail(request):
 
 def submit_question(request):
     # request.REQUEST.get('name')
-    content = request.GET.get('Content', '')
+
+    if request.method == 'POST':
+        param_data = json.loads(request.body)
+    else:
+        return HttpResponse('erro,need post', content_type='application/json; charset=utf-8')
+    content = param_data.get('Content', '')
     ask_time = int(time.time())
-    asker_openid = request.GET.get('FromUserName', '')
-    grad_weixin_id = request.GET.get('ToUserName', '')
+    asker_openid = param_data.get('FromUserName', '')
+    grad_weixin_id = param_data.get('ToUserName', '')
+    ques_grad_str = '%s|%s' % (grad_weixin_id,content)
+    mgRedis = init_redis('127.0.0.1',6379,0)
+    mgRedis.rpush('ques_grad_mq',ques_grad_str)
     print content,ask_time,asker_openid,grad_weixin_id
     question = Question()
     question.content = content
@@ -143,10 +160,14 @@ def submit_question(request):
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def submit_answer(request):
-    qid = request.GET.get('qid', 0)
-    content = request.GET.get('content', '')
+    if request.method == 'POST':
+        param_data = json.loads(request.body)
+    else:
+        return HttpResponse('erro,need post', content_type='application/json; charset=utf-8')
+    qid = param_data.get('qid', 0)
+    content = param_data.get('content', '')
     answer_time = int(time.time())
-    grad_weixin_id = request.GET.get('grad_weixin_id', '')
+    grad_weixin_id = param_data.get('grad_weixin_id', '')
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
