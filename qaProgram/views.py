@@ -9,6 +9,7 @@ from dss.Serializer import serializer
 from qaProgram.models import Question,Answer,GradDetail,Picture
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from WXBizMsgCrypt import SHA1
 import json
 import time
 import os
@@ -132,8 +133,13 @@ def submit_question(request):
 
     if request.method == 'POST':
         param_data = json.loads(request.body)
-    else:
-        return HttpResponse('erro,need post', content_type='application/json; charset=utf-8')
+    elif request.method == 'GET':
+        signature = request.GET.get("signature");
+        timestamp = request.GET.get("timestamp");
+        nonce = request.GET.get("nonce");
+        echostr = request.GET.get("echostr");
+        if checkSignature(signature, timestamp, nonce):
+            return echostr
     content = param_data.get('Content', '')
     ask_time = int(time.time())
     asker_openid = param_data.get('FromUserName', '')
@@ -187,4 +193,16 @@ def getPic(request):
     pic_path = os.path.join(base_path,pname)
     image_data = open(pic_path, "rb").read()
     return HttpResponse(image_data, content_type="image/png")
+
+def checkSignature(signature,timestamp,nonce):
+    token = 'datongxueba'
+    print signature,timestamp,nonce
+    shal = SHA1()
+    str = shal.getSHA1(token, timestamp, nonce)
+    if signature == str:
+        return True
+    else:
+        return False
+
+
 
