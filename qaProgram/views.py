@@ -195,11 +195,11 @@ def getPic(request):
     return HttpResponse(image_data, content_type="image/png")
 
 def checkSignature(signature,timestamp,nonce):
-    token = 'datongxueba1'
+    token = 'datongxueba2'
     print signature,timestamp,nonce
     shal = SHA1()
     str = shal.getSHA1(token, timestamp, nonce)
-    print str
+    print str[1]
     if signature == str[1]:
         return True
     else:
