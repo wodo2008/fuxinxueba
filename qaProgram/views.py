@@ -139,7 +139,7 @@ def submit_question(request):
         nonce = request.GET.get("nonce");
         echostr = request.GET.get("echostr");
         if checkSignature(signature, timestamp, nonce):
-            return echostr
+            return HttpResponse(echostr, content_type='application/json; charset=utf-8')
     content = param_data.get('Content', '')
     ask_time = int(time.time())
     asker_openid = param_data.get('FromUserName', '')
@@ -195,7 +195,7 @@ def getPic(request):
     return HttpResponse(image_data, content_type="image/png")
 
 def checkSignature(signature,timestamp,nonce):
-    token = 'datongxueba2'
+    token = 'datongxueba3'
     print signature,timestamp,nonce
     shal = SHA1()
     str = shal.getSHA1(token, timestamp, nonce)
