@@ -200,7 +200,7 @@ def checkSignature(signature,timestamp,nonce):
     shal = SHA1()
     str = shal.getSHA1(token, timestamp, nonce)
     print str
-    if signature == str:
+    if signature == str[1]:
         return True
     else:
         return False
