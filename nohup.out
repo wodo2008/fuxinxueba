@@ -389,3 +389,139 @@ Traceback (most recent call last):
     request.REQUEST.get('name')
 AttributeError: 'WSGIRequest' object has no attribute 'REQUEST'
 [27/Aug/2017 12:49:32] "POST /smallprogram/submit_question HTTP/1.0" 500 63727
+Error: That port is already in use.
+/home/app/fuxinxueba/qaProgram/views.py:38: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'qaProgram.models.Question'> QuerySet.
+  paginator = Paginator(data, int(pageSize))
+[28/Aug/2017 15:20:39] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:20:39] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 264
+[28/Aug/2017 15:20:39] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:20:45] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:20:45] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=2 HTTP/1.0" 200 264
+[28/Aug/2017 15:20:46] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:20:46] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=3 HTTP/1.0" 200 264
+[28/Aug/2017 15:20:47] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:20:47] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=4 HTTP/1.0" 200 264
+[28/Aug/2017 15:20:48] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:20:48] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=5 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:01] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:01] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:02] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:21:03] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:03] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=2 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:05] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:05] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=3 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:07] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:07] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=4 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:09] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:09] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=5 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:11] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:11] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=6 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:15] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:15] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=7 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:20] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=8 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:20] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:21:27] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=9 HTTP/1.0" 200 264
+[28/Aug/2017 15:21:27] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:13] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:13] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:13] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:22:14] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:14] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=2 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:16] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:16] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=3 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:17] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:17] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=4 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:18] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:18] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=5 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:30] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:30] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:30] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:22:32] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:32] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=2 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:34] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:34] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=3 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:35] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:35] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=4 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:37] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:37] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=5 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:39] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:39] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=6 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:41] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:41] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=7 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:43] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:43] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=8 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:46] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:46] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=9 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:48] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:48] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=10 HTTP/1.0" 200 264
+[28/Aug/2017 15:22:50] "POST /smallprogram/submit_question?signature=92b6d69450197afcb05bf8a8f66abf3ccc55432f&timestamp=1503933770&nonce=494414601 HTTP/1.0" 200 7
+[28/Aug/2017 15:22:55] "POST /smallprogram/submit_question?signature=5996e0e7eb61ab1411dcc366e9c9ca0c5c387a67&timestamp=1503933775&nonce=1769448168 HTTP/1.0" 200 7
+[28/Aug/2017 15:22:59] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:22:59] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageSize=10&pageNo=11 HTTP/1.0" 200 264
+[28/Aug/2017 15:24:14] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+/home/app/fuxinxueba/qaProgram/views.py:82: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'qaProgram.models.Question'> QuerySet.
+  paginator = Paginator(data, int(pageSize))
+[28/Aug/2017 15:24:14] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:24:14] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:28:33] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:28:33] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:28:33] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:31:14] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:31:14] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:31:14] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:32:04] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:32:04] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:32:04] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:32:05] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:32:07] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:32:38] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:32:38] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:32:38] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:32:57] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:32:57] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:32:57] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:42:17] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:42:17] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:42:17] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:43:09] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:43:09] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:43:10] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:47:01] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:47:01] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:47:01] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:49:40] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:49:40] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:49:40] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:49:45] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:49:45] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:49:45] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:50:19] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:50:19] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:50:19] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:51:07] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:51:07] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:51:07] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:52:49] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:52:49] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:52:49] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:53:24] "GET /smallprogram/getGradDetail?grad_weixin_id=ww HTTP/1.0" 200 188
+[28/Aug/2017 15:53:24] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&pageSize=10&pageNo=1 HTTP/1.0" 200 336
+[28/Aug/2017 15:53:24] "GET /smallprogram/getPic?pname=img/c.jpg HTTP/1.0" 200 2672
+[28/Aug/2017 15:53:26] "GET /smallprogram/get_grad_question_list?grad_weixin_id=ww&question_id=14 HTTP/1.0" 200 336
+[28/Aug/2017 16:06:31] "GET /smallprogram/get_stu_question_list?grad_weixin_id=ww&pageNo=1&pageSize=1 HTTP/1.0" 200 154
+Internal Server Error: /smallprogram/get_answer
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/app/fuxinxueba/qaProgram/views.py", line 109, in get_answer
+    ans = Answer.objects.get(qid=qid,grad_weixin_id=grad_weixin_id)
+  File "/usr/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Answer matching query does not exist.
+[28/Aug/2017 16:07:07] "GET /smallprogram/get_answer?grad_weixin_id=ww&question_id=1 HTTP/1.0" 500 73532
