@@ -117,6 +117,26 @@ def get_answer(request):
     response_data['success'] = 'Ok'
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
+def get_question(request):
+    qid = request.GET.get('qid', None)
+    grad_weixin_id = request.GET.get('grad_weixin_id', None)
+    response_data = {}
+    if not qid or not grad_weixin_id:
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'param none'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    try:
+        ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
+    except:
+        response_data['success'] = 'erro'
+        response_data['msg'] = 'no data'
+        return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+    s = serializer(ques)
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+
 def getGradDetail(request):
     grad_weixin_id = request.GET.get('grad_weixin_id', None)
     if not grad_weixin_id:
