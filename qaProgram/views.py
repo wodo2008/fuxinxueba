@@ -205,7 +205,7 @@ def submit_answer(request):
     answer_time = int(time.time())
     grad_weixin_id = param_data.get('grad_weixin_id', '')
     ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = ACCESS_TOKEN'
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = datongxueba3'
     dic = {}
     dic['touser'] = ques.asker_openid
     dic['msgtype'] = 'text'
