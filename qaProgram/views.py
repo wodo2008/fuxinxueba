@@ -134,7 +134,6 @@ def getGradDetail(request):
 
 def submit_question(request):
     # request.REQUEST.get('name')
-
     if request.method == 'POST':
         param_data = json.loads(request.body)
     elif request.method == 'GET':
@@ -145,12 +144,17 @@ def submit_question(request):
         if checkSignature(signature, timestamp, nonce):
             return HttpResponse(echostr, content_type='application/json; charset=utf-8')
     print 'param_data:',param_data
-    content = param_data.get('Content', '')
-    ask_time = int(time.time())
-    asker_openid = param_data.get('FromUserName', '')
-    grad_weixin_id = param_data.get('ToUserName', '')
+    mgRedis = init_redis('127.0.0.1', 6379, 0)
+    if param_data['MsgType'] == 'event':
+        mgRedis.set(param_data['FromUserName'],param_data['SessionFrom'])
+    elif param_data['MsgType'] == 'text':
+        content = param_data.get('Content', '')
+        ask_time = int(time.time())
+        asker_openid = param_data.get('FromUserName', '')
+        #grad_weixin_id = param_data.get('ToUserName', '')
+        grad_weixin_id = mgRedis.get(param_data.get('FromUserName', ''))
     ques_grad_str = '%s|%s' % (grad_weixin_id,content)
-    mgRedis = init_redis('127.0.0.1',6379,0)
+    print 'ques_grad_str:',ques_grad_str
     mgRedis.rpush('ques_grad_mq',ques_grad_str)
     print content,ask_time,asker_openid,grad_weixin_id
     question = Question()
