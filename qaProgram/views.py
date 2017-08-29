@@ -14,6 +14,8 @@ import json
 import time
 import os
 import redis
+import Reqeusts
+
 
 def init_redis(host,port,db,password=None):
     if password :
@@ -32,11 +34,9 @@ def get_stu_question_list(request):
         response_data['success'] = 'erro'
         response_data['msg'] = 'grad_weixin none'
         return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
-
     data = Question.objects.filter(grad_weixin_id = grad_weixin_id,status=True)
     totalNum = Question.objects.filter(grad_weixin_id=grad_weixin_id,status=True).count()
     paginator = Paginator(data, int(pageSize))
-
     try:
         pdata = paginator.page(int(pageNo))
     except PageNotAnInteger:
@@ -204,12 +204,22 @@ def submit_answer(request):
     content = param_data.get('content', '')
     answer_time = int(time.time())
     grad_weixin_id = param_data.get('grad_weixin_id', '')
+    ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = datongxueba3'
+    dic = {}
+    dic['touser'] = ques.asker_openid
+    dic['msgtype'] = 'text'
+    dic.setdefault('text',{})
+    dic['text']['content'] = 'Hello World'
+    Reqeusts.post(url, data=dic)
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
     dic['answer_time'] = answer_time
     dic['grad_weixin_id'] = grad_weixin_id
     Answer.objects.create(**dic)
+    ques.status = True
+    ques.save()
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def getPic(request):
