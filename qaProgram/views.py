@@ -205,14 +205,14 @@ def submit_answer(request):
     answer_time = int(time.time())
     grad_weixin_id = param_data.get('grad_weixin_id', '')
     ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = datongxueba3'
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = ACCESS_TOKEN'
     dic = {}
     dic['touser'] = ques.asker_openid
     dic['msgtype'] = 'text'
     dic.setdefault('text',{})
     dic['text']['content'] = 'Hello World'
     print 'dic:',dic
-    requests.post(url, data=dic)
+    print 'resp:',requests.post(url, data=dic)
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
