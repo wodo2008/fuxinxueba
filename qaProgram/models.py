@@ -29,8 +29,7 @@ class GradDetail(models.Model):
     school = models.CharField(max_length=32,default='')
     specialty = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32,default='')
-    def __unicode__(self):
-        return self.gid
+
 
 class Picture(models.Model):
     pid = models.AutoField(primary_key=True)
