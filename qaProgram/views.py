@@ -212,7 +212,8 @@ def submit_answer(request):
     dic.setdefault('text',{})
     dic['text']['content'] = 'Hello World'
     print 'dic:',dic
-    print 'resp:',requests.post(url, data=dic)
+    r = requests.post(url, data=dic)
+    print 'resp:',r.text
     dic = {}
     dic['qid'] = qid
     dic['content'] = content
