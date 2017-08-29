@@ -54,8 +54,8 @@ def get_stu_question_list(request):
         fdata['qcontent'] = d.content
         fdata['status'] = status
         if status:
-            ans = Answer.objects.get(qid=qid)
-            fdata['acontent'] = ans.content if ans else ''
+            ansList = Answer.objects.filter(qid=qid)
+            fdata['acontent'] = ans[0].content if ans else ''
         flist.append(fdata)
     s = serializer(flist)
     response_data = {}
