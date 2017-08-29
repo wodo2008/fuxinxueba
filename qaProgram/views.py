@@ -144,6 +144,7 @@ def submit_question(request):
         echostr = request.GET.get("echostr");
         if checkSignature(signature, timestamp, nonce):
             return HttpResponse(echostr, content_type='application/json; charset=utf-8')
+    print 'param_data:',param_data
     content = param_data.get('Content', '')
     ask_time = int(time.time())
     asker_openid = param_data.get('FromUserName', '')
