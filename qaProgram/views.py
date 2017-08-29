@@ -147,6 +147,7 @@ def submit_question(request):
     mgRedis = init_redis('127.0.0.1', 6379, 0)
     if param_data['MsgType'] == 'event':
         mgRedis.set(param_data['FromUserName'],param_data['SessionFrom'])
+        return HttpResponse('success', content_type='application/json; charset=utf-8')
     elif param_data['MsgType'] == 'text':
         content = param_data.get('Content', '')
         ask_time = int(time.time())
