@@ -14,7 +14,7 @@ import json
 import time
 import os
 import redis
-import reqeusts
+import requests
 
 
 def init_redis(host,port,db,password=None):
