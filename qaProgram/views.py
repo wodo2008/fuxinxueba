@@ -211,7 +211,7 @@ def submit_answer(request):
     print 'token_result:',token_result.text
     access_token = json.loads(token_result.text)['access_token']
     print 'access_token:',access_token
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = %s' % access_token
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
     dic = {}
     dic['touser'] = ques.asker_openid
     dic['msgtype'] = 'text'
