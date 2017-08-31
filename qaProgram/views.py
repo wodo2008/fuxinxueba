@@ -205,7 +205,13 @@ def submit_answer(request):
     answer_time = int(time.time())
     grad_weixin_id = param_data.get('grad_weixin_id', '')
     ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = datongxueba3'
+    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
+                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
+    token_result = requests.post(token_url)
+    print 'token_result:',token_result
+    access_token = token_result['access_token']
+    print 'access_token:',access_token
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = %s' % access_token
     dic = {}
     dic['touser'] = ques.asker_openid
     dic['msgtype'] = 'text'
