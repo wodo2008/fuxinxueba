@@ -209,7 +209,7 @@ def submit_answer(request):
                 '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
     token_result = requests.post(token_url)
     print 'token_result:',token_result.text
-    access_token = token_result['access_token']
+    access_token = token_result.text['access_token']
     print 'access_token:',access_token
     url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token = %s' % access_token
     dic = {}
