@@ -16,6 +16,8 @@ import os
 import redis
 import requests
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def init_redis(host,port,db,password=None):
     if password :
