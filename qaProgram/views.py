@@ -242,7 +242,7 @@ def testanswer(request):
     print 'access_token:', access_token
     url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
     dic = {}
-    dic["touser"] = 'test'
+    dic["touser"] = 'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI'
     dic["msgtype"] = "text"
     dic.setdefault("text", {})
     dic["text"]["content"] = '你是我的'
@@ -251,6 +251,7 @@ def testanswer(request):
     print 'url:', url
     r = requests.post(url, data=json.dumps(dic).decode('utf8'), headers=headers)
     print 'resp:', r.text
+    return HttpResponse('success', content_type='application/json; charset=utf-8')
 
 def getPic(request):
     pname = request.GET.get('pname', None)
