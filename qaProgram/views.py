@@ -213,10 +213,10 @@ def submit_answer(request):
     print 'access_token:',access_token
     url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
     dic = {}
-    dic['touser'] = ques.asker_openid
-    dic['msgtype'] = 'text'
-    dic.setdefault('text',{})
-    dic['text']['content'] = 'Hello World'
+    dic["touser"] = ques.asker_openid
+    dic["msgtype"] = "text"
+    dic.setdefault("text",{})
+    dic["text"]["content"] = "Hello World"
     print 'dic:',dic
     print 'url:',url
     r = requests.post(url, data=dic)
