@@ -216,7 +216,7 @@ def submit_answer(request):
     dic["touser"] = ques.asker_openid
     dic["msgtype"] = "text"
     dic.setdefault("text",{})
-    dic["text"]["content"] = "Hello World"
+    dic["text"]["content"] = content
     print 'dic:',dic
     print 'url:',url
     r = requests.post(url, data=json.dumps(dic))
