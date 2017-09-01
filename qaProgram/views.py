@@ -15,6 +15,7 @@ import time
 import os
 import redis
 import requests
+import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
