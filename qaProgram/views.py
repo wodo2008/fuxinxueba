@@ -17,8 +17,6 @@ import redis
 import requests
 import sys
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 def init_redis(host,port,db,password=None):
     if password :
@@ -222,7 +220,7 @@ def submit_answer(request):
     dic["text"]["content"] = content
     print 'dic:',dic
     print 'url:',url
-    r = requests.post(url, data=json.dumps(dic))
+    r = requests.post(url, data=json.dumps(dic,ensure_ascii=False))
     print 'resp:',r.text
     dic = {}
     dic['qid'] = qid
