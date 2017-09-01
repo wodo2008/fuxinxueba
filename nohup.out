@@ -897,3 +897,25 @@ param_data: {u'FromUserName': u'oYZH-0LSz8UKhEx_gHlI[30/Aug/2017 06:24:59] "POST
 [31/Aug/2017 02:33:37] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1020
 [31/Aug/2017 02:33:38] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=3 HTTP/1.0" 200 971
 [31/Aug/2017 02:33:38] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=4 HTTP/1.0" 200 370
+[01/Sep/2017 06:08:36] "POST /smallprogram/submit_question?signature=3a2ec1a87f8716cb8ddffcae8803f8baba023869&timestamp=1504246116&nonce=193536490 HTTP/1.0" 200 7
+[01/Sep/2017 06:10:29] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+/home/app/fuxinxueba/qaProgram/views.py:82: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'qaProgram.models.Question'> QuerySet.
+  paginator = Paginator(data, int(pageSize))
+[01/Sep/2017 06:10:29] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 407
+[01/Sep/2017 06:10:29] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[01/Sep/2017 06:10:41] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 407
+[01/Sep/2017 06:10:41] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[01/Sep/2017 06:10:42] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[01/Sep/2017 06:10:44] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=75 HTTP/1.0" 200 206
+[01/Sep/2017 06:10:55] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=75 HTTP/1.0" 200 206
+[01/Sep/2017 06:11:00] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=77 HTTP/1.0" 200 206
+[01/Sep/2017 06:11:06] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=77 HTTP/1.0" 200 206
+[01/Sep/2017 06:11:27] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[01/Sep/2017 06:11:27] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[01/Sep/2017 06:11:27] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 226
+[01/Sep/2017 06:11:27] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[01/Sep/2017 06:11:31] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=75 HTTP/1.0" 200 206
+[01/Sep/2017 06:11:39] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[01/Sep/2017 06:11:40] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[01/Sep/2017 06:11:40] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 47
+[01/Sep/2017 06:11:40] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
