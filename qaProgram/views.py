@@ -218,9 +218,10 @@ def submit_answer(request):
     dic["msgtype"] = "text"
     dic.setdefault("text",{})
     dic["text"]["content"] = content
+    headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:',dic
     print 'url:',url
-    r = requests.post(url, data=json.dumps(dic,ensure_ascii=False))
+    r = requests.post(url,data=json.dumps(dic),headers=headers)
     print 'resp:',r.text
     dic = {}
     dic['qid'] = qid
