@@ -219,7 +219,7 @@ def submit_answer(request):
     dic["text"]["content"] = "Hello World"
     print 'dic:',dic
     print 'url:',url
-    r = requests.post(url, data=dic)
+    r = requests.post(url, data=json.dumps(dic))
     print 'resp:',r.text
     dic = {}
     dic['qid'] = qid
