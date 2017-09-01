@@ -233,6 +233,25 @@ def submit_answer(request):
     ques.save()
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
+def testanswer(request):
+    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
+                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
+    token_result = requests.post(token_url)
+    print 'token_result:', token_result.text
+    access_token = json.loads(token_result.text)['access_token']
+    print 'access_token:', access_token
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
+    dic = {}
+    dic["touser"] = 'test'
+    dic["msgtype"] = "text"
+    dic.setdefault("text", {})
+    dic["text"]["content"] = '你是我的'
+    headers = {'content-type': 'application/json; charset=utf-8'}
+    print 'dic:', dic
+    print 'url:', url
+    r = requests.post(url, data=json.dumps(dic).decode('utf8'), headers=headers)
+    print 'resp:', r.text
+
 def getPic(request):
     pname = request.GET.get('pname', None)
     if not pname:
