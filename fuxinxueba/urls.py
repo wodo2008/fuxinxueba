@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+import settings
+from smallProgram import views
 
 urlpatterns = [
     url(r'^smallprogram/admin/', admin.site.urls),
+    url( r'^static/(?P<path>.*)$', 'django.views.static.serve',
+         {'document_root': settings.STATIC_URL}),
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
 ]
