@@ -1,27 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>HTML5 手机摇一摇</title>
-        <script type="text/javascript">
-            var color = new Array('#fff', '#ff0', '#f00', '#000', '#00f', '#0ff');
-            if(window.DeviceMotionEvent) {
-                var speed = 25;
-                var x = y = z = lastX = lastY = lastZ = 0;
-                window.addEventListener('devicemotion', function(){
-                    var acceleration =event.accelerationIncludingGravity;
-                    x = acceleration.x;
-                    y = acceleration.y;
-                    if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
-                        document.body.style.backgroundColor = color[Math.round(Math.random()*10)%6];
-                    }
-                    lastX = x;
-                    lastY = y;
-                }, false);
-            }
-        </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的专属复旦情话</title>
+<div id="wx_pic" style="margin:0 auto;display:none;">
+<img src="images/show.png" />
+</div>
+<link rel="stylesheet" />
+<style type="text/css">
+.main{margin:0px auto:0; text-align: center}
+body{margin:0px;}
+IMG {BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px}
+
+</style>
 </head>
+
 <body>
-    手机摇一摇，改变屏幕颜色。
+<div id="main" style="position:absolute; width:100%; height:100%; z-index:-1">
+	 <img src="images/front.jpg" height="100%" width="100%">
+</div>
+
+<script type="text/javascript" src="shake.js"></script>
+<script type="text/javascript" src="pic.js"></script>
+
+<script type="text/javascript">
+
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1263716982'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D1263716982' type='text/javascript'%3E%3C/script%3E"));
+document.getElementById("cnzz_stat_icon_1263716982").style.display = "none";
+
+</script>
+
+
+</div>
 </body>
 </html>
