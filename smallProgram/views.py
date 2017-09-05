@@ -103,4 +103,5 @@ def getPushPositionDetail(request):
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
 def getShakePage(request):
-    return render(request, 'hello.html', context)
+    print 'shake test'
+    return render(request, 'hello.html')
