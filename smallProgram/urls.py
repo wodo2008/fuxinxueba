@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from . import views
+import settings
+
 
 urlpatterns = [
     url(r'^smallprogram/getCompanyList',views.getCompanyList),
