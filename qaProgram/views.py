@@ -245,11 +245,14 @@ def testanswer(request):
     dic["touser"] = 'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI'
     dic["msgtype"] = "text"
     dic.setdefault("text", {})
-    dic["text"]["content"] = '你是我的'
+    dic["text"]["content"] = 'ans:'+'你是我的'
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:', dic
     print 'url:', url
-    r = requests.post(url, data=json.dumps(dic).decode('utf8'), headers=headers)
+    datatmp = json.dumps(dic)
+    print 'datatmp:',datatmp
+    datatmp.replace(/"content":".*?"/,'content:"你是我的"')
+    r = requests.post(url, data=datatmp, headers=headers)
     print 'resp:', r.text
     return HttpResponse('success', content_type='application/json; charset=utf-8')
 
