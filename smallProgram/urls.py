@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^smallprogram/getExcAlumniDetail',views.getExcAlumniDetail),
     url(r'^smallprogram/getPushPositionDetail',views.getPushPositionDetail),
     url(r'^smallprogram/getShakePage',views.getShakePage),
+    url( r'^static/(?P<path>.*)$', 'django.views.static.serve',
+         {'document_root': settings.STATIC_URL}),
 ]
