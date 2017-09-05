@@ -10,6 +10,7 @@ from smallProgram.models import Company,Eec_alumni,Push_position
 from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
+from django.shortcuts import render
 
 def getCompanyList(request):
     pageNo = request.GET.get('pageNo',1)
@@ -100,3 +101,6 @@ def getPushPositionDetail(request):
     response_data['data'] = s
     response_data['success'] = 'Ok'
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
+def getShakePage(request):
+    return render(request, 'hello.html', context)

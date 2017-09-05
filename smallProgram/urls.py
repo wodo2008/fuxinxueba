@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^smallprogram/getPushPositionList',views.getPushPositionList),
     url(r'^smallprogram/getExcAlumniDetail',views.getExcAlumniDetail),
     url(r'^smallprogram/getPushPositionDetail',views.getPushPositionDetail),
+    url(r'^smallprogram/getShakePage',views.getShakePage),
 ]
