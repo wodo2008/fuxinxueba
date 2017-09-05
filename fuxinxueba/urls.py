@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 import settings
-from smallProgram import views
 
 urlpatterns = [
     url(r'^smallprogram/admin/', admin.site.urls),
