@@ -251,7 +251,7 @@ def testanswer(request):
     print 'url:', url
     datatmp = json.dumps(dic)
     print 'datatmp:',datatmp
-    datatmp.replace(/"content":".*?"/,'content:"你是我的"')
+    #datatmp.replace(/"content":".*?"/,'content:"你是我的"')
     r = requests.post(url, data=datatmp, headers=headers)
     print 'resp:', r.text
     return HttpResponse('success', content_type='application/json; charset=utf-8')
