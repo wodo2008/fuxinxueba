@@ -1,6 +1,6 @@
 window.onload = function() {
     var myShakeEvent = new Shake({
-        threshold: 5
+        threshold: 1
     });
 
     myShakeEvent.start();
