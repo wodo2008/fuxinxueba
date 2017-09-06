@@ -14,8 +14,8 @@ window.onload = function() {
 		var titlestr="";
 		var sImg = new Array();
 		var sWord = new Array();
-		sImg[0]="smallprogram/static/images/pic1.jpg";
-		sImg[1]="smallprogram/static/images/pic2.jpg";
+		sImg[0]="static/images/pic1.jpg";
+		sImg[1]="static/images/pic2.jpg";
 
 
 
