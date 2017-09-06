@@ -40,7 +40,7 @@ window.onload = function() {
 		Ro=mixArray(Ro);
 		for (var j=0;j<ShowCount ; j++){
 			str += "<img src=\"" + sImg[Ro[j]] + "\"height=\"100%\" width=\"100%\" />";
-		    titlestr +="复旦七夕情话——"+sWord[Ro[j]];
+		    titlestr +="教师节，想和你说的——"+sWord[Ro[j]];
 		}
 
 		document.getElementById("main").innerHTML=str;
