@@ -18,7 +18,7 @@
         this.hasDeviceMotion = 'ondevicemotion' in window;
 
         this.options = {
-            threshold: 5, //default velocity threshold for shake to register
+            threshold: 3, //default velocity threshold for shake to register
             timeout: 1000 //default interval between events
         };
 
