@@ -16,8 +16,11 @@ window.onload = function() {
     var sWord2 = new Array();
     var sWord3 = new Array();
     sImg1[0]="static/images/pic1.jpg";
+    sImg1[1]="static/images/pic1.jpg";
     sImg2[0]="static/images/pic2.jpg";
+    sImg2[1]="static/images/pic2.jpg";
     sImg3[0]="static/images/pic3.jpg";
+    sImg3[1]="static/images/pic3.jpg";
 
     sWord1[0]="我想给你念句诗";
     sWord2[0]="你最特别";
@@ -33,7 +36,7 @@ window.onload = function() {
 			return goal;
 	}
 	Ro = new Array();
-    for (var x=0;x<imgNum ;x++ ){
+    for (var x=0;x<sImg1.length ;x++ ){
         Ro[x]=x;}
 	Ro=mixArray(Ro);
 	for (var i=0; i < Ro.length; i++){
