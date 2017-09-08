@@ -23,8 +23,11 @@ window.onload = function() {
     sImg3[1]="static/images/pic3.jpg";
 
     sWord1[0]="我想给你念句诗";
+    sWord1[1]="给你念句诗";
     sWord2[0]="你最特别";
+    sWord2[1]="特别";
     sWord3[0]="谢谢你";
+    sWord3[1]="你";
 
     function mixArray(source){
 			var goal=[];
