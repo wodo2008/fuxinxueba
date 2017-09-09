@@ -21,15 +21,6 @@ window.onload = function() {
     sImg1[3]="static/images/1_4.jpg";
     sImg1[4]="static/images/1_5.jpg";
     sImg1[5]="static/images/1_6.jpg";
-    sImg1[6]="static/images/1_7.jpg";
-    sImg1[7]="static/images/1_8.jpg";
-    sImg1[8]="static/images/1_9.jpg";
-    sImg1[9]="static/images/1_10.jpg";
-    sImg1[10]="static/images/1_11.jpg";
-    sImg1[11]="static/images/1_12.jpg";
-    sImg1[12]="static/images/1_13.jpg";
-    sImg1[13]="static/images/1_14.jpg";
-    sImg1[14]="static/images/1_15.jpg";
     sImg2[0]="static/images/2_1.jpg";
     sImg2[1]="static/images/2_2.jpg";
     sImg2[2]="static/images/2_3.jpg";
@@ -89,16 +80,26 @@ window.onload = function() {
 			return goal;
 	}
 	Ro = new Array();
-    for (var x=0;x<sImg1.length ;x++ ){
+	maxImgSize = Math.max(sImg1.length,sImg2.length,sImg3.length);
+    for (var x=0;x<maxImgSize ;x++ ){
         Ro[x]=x;}
 	Ro=mixArray(Ro);
 	for (var i=0; i < Ro.length; i++){
-	    sImg[i*3] = sImg1[Ro[i]]
-	    sImg[i*3+1] = sImg2[Ro[i]]
-	    sImg[i*3+2] = sImg3[Ro[i]]
-	    sWord[i*3] = sWord1[Ro[i]]
-	    sWord[i*3+1] = sWord2[Ro[i]]
-	    sWord[i*3+2] = sWord3[Ro[i]]
+	    if(i<sImg1.length){
+	        sImg[sImg.length] = sImg1[Ro[i]];
+	    }
+	    if(i<sImg2.length){
+	        sImg[sImg.length] = sImg2[Ro[i]];
+	    }
+	    if(i<sImg3.length){
+	        sImg[sImg.length] = sImg3[Ro[i]];
+	    }
+//	    sImg[i*3] = sImg1[Ro[i]]
+//	    sImg[i*3+1] = sImg2[Ro[i]]
+//	    sImg[i*3+2] = sImg3[Ro[i]]
+//	    sWord[i*3] = sWord1[Ro[i]]
+//	    sWord[i*3+1] = sWord2[Ro[i]]
+//	    sWord[i*3+2] = sWord3[Ro[i]]
 	}
     j = 0;
     function shakeEventDidOccur () {
