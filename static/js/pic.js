@@ -55,6 +55,7 @@ window.onload = function() {
     sImg3[16]="static/images/3_17.jpg";
     sImg3[17]="static/images/3_18.jpg";
     sImg3[18]="static/images/3_19.jpg";
+    scan_page = "static/images/scan_page.jpg";
 
 //
 //    sImg2[0]="static/images/pic2.jpg";
@@ -79,20 +80,28 @@ window.onload = function() {
 			}
 			return goal;
 	}
-	Ro = new Array();
+	Ro1 = new Array();
+	Ro2 = new Array();
+	Ro3 = new Array();
 	maxImgSize = Math.max(sImg1.length,sImg2.length,sImg3.length);
-    for (var x=0;x<maxImgSize ;x++ ){
-        Ro[x]=x;}
-	Ro=mixArray(Ro);
-	for (var i=0; i < Ro.length; i++){
+    for (var x=0;x<sImg1.length ;x++ ){
+        Ro1[x]=x;}
+    for (var x=0;x<sImg2.length ;x++ ){
+        Ro2[x]=x;}
+    for (var x=0;x<sImg3.length ;x++ ){
+        Ro3[x]=x;}
+	Ro1=mixArray(Ro1);
+	Ro2=mixArray(Ro2);
+	Ro3=mixArray(Ro3);
+	for (var i=0; i < maxImgSize; i++){
 	    if(i<sImg1.length){
-	        sImg[sImg.length] = sImg1[Ro[i]];
+	        sImg[sImg.length] = sImg1[Ro1[i]];
 	    }
 	    if(i<sImg2.length){
-	        sImg[sImg.length] = sImg2[Ro[i]];
+	        sImg[sImg.length] = sImg2[Ro2[i]];
 	    }
 	    if(i<sImg3.length){
-	        sImg[sImg.length] = sImg3[Ro[i]];
+	        sImg[sImg.length] = sImg3[Ro3[i]];
 	    }
 //	    sImg[i*3] = sImg1[Ro[i]]
 //	    sImg[i*3+1] = sImg2[Ro[i]]
@@ -101,6 +110,7 @@ window.onload = function() {
 //	    sWord[i*3+1] = sWord2[Ro[i]]
 //	    sWord[i*3+2] = sWord3[Ro[i]]
 	}
+	sImg[sImg.length] = scan_page;
     j = 0;
     function shakeEventDidOccur () {
 		var ShowCount = 1;
