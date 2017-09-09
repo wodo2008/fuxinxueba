@@ -69,7 +69,7 @@ window.onload = function() {
     sWord2[1]="特别";
     sWord3[0]="谢谢你";
     sWord3[1]="你";
-    title = '教师节祝语'
+    title = '那些年老师说过的段子'
 
     function mixArray(source){
 			var goal=[];
