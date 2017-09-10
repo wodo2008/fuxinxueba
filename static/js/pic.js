@@ -110,7 +110,34 @@ window.onload = function() {
 //	    sWord[i*3+1] = sWord2[Ro[i]]
 //	    sWord[i*3+2] = sWord3[Ro[i]]
 	}
-	sImg[sImg.length] = scan_page;
+    nowtime = Date.parse( new Date());
+    hasHongbao = Math.random();
+    if(nowtime < 1505028900000){
+        //随机产生抢红包页
+        hongbaoImg = '';
+        maxNum = sImg.length;
+        hongbaoNum = parseInt(Math.random() * maxNum);
+        origImg = sImg[hongbaoNum];
+        sImg[hongbaoNum] = hongbaoImg;
+        sImg[sImg.length] = origImg;
+    }else if(hasHongbao > 0.5){
+        //随机产生抢红包页
+        hongbaoImg = '';
+        maxNum = sImg.length;
+        hongbaoNum = parseInt(Math.random() * maxNum);
+        origImg = sImg[hongbaoNum];
+        sImg[hongbaoNum] = hongbaoImg;
+        sImg[sImg.length] = origImg;
+    }
+    //随机产生抢红包页
+    hongbaoImg = '';
+    maxNum = sImg.length;
+    hongbaoNum = parseInt(Math.random() * maxNum);
+    origImg = sImg[hongbaoNum];
+    sImg[hongbaoNum] = hongbaoImg;
+    sImg[sImg.length] = origImg;
+    //尾页
+    sImg[sImg.length] = scan_page;
     j = 0;
     function shakeEventDidOccur () {
 		var ShowCount = 1;
