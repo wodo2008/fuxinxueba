@@ -114,7 +114,7 @@ window.onload = function() {
     hasHongbao = Math.random();
     if(nowtime < 1505028900000){
         //随机产生抢红包页
-        hongbaoImg = '';
+        hongbaoImg = "static/images/hongbao.jpg";
         maxNum = sImg.length;
         hongbaoNum = parseInt(Math.random() * maxNum);
         origImg = sImg[hongbaoNum];
@@ -129,13 +129,7 @@ window.onload = function() {
         sImg[hongbaoNum] = hongbaoImg;
         sImg[sImg.length] = origImg;
     }
-    //随机产生抢红包页
-    hongbaoImg = '';
-    maxNum = sImg.length;
-    hongbaoNum = parseInt(Math.random() * maxNum);
-    origImg = sImg[hongbaoNum];
-    sImg[hongbaoNum] = hongbaoImg;
-    sImg[sImg.length] = origImg;
+
     //尾页
     sImg[sImg.length] = scan_page;
     j = 0;
