@@ -16,7 +16,12 @@ import os
 import redis
 import requests
 import sys
+import urllib2
+from urllib import quote
+from urllib import unquote
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def init_redis(host,port,db,password=None):
     if password :
@@ -245,16 +250,24 @@ def testanswer(request):
     dic["touser"] = 'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI'
     dic["msgtype"] = "text"
     dic.setdefault("text", {})
-    dic["text"]["content"] = 'ans:'+'你是我的'
+    str1 = quote(str('你是我的'))
+    print str1
+    dic["text"]["content"] = str1
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:', dic
     print 'url:', url
     datatmp = json.dumps(dic)
+    data1 = unquote(datatmp)
     print 'datatmp:',datatmp
     #datatmp.replace(/"content":".*?"/,'content:"你是我的"')
-    r = requests.post(url, data=datatmp, headers=headers)
+    #r = urllib2.Request(url=url, headers=headers, data=json.dumps(dic))
+    #req = urllib2.Request(url)  
+    #req.add_header('Content-Type', 'application/json') 
+    #r = urllib2.urlopen(req, json.dumps(dic))
+    #r = requests.post(url, json=dic, headers=headers)
+    r = requests.post(url, data=data1, headers=headers)
     print 'resp:', r.text
-    return HttpResponse('success', content_type='application/json; charset=utf-8')
+    return HttpResponse('success', content_type='application/json')
 
 def getPic(request):
     pname = request.GET.get('pname', None)
