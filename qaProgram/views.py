@@ -16,7 +16,6 @@ import os
 import redis
 import requests
 import sys
-import urllib2
 from urllib import quote
 from urllib import unquote
 
@@ -222,11 +221,11 @@ def submit_answer(request):
     dic["touser"] = ques.asker_openid
     dic["msgtype"] = "text"
     dic.setdefault("text",{})
-    dic["text"]["content"] = content
+    dic["text"]["content"] = quote(str(content))
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:',dic
-    print 'url:',url
-    r = requests.post(url,data=json.dumps(dic).decode('utf8'),headers=headers)
+    datatmp = json.dumps(dic)
+    r = requests.post(url,data=unquote(datatmp),headers=headers)
     print 'resp:',r.text
     dic = {}
     dic['qid'] = qid
@@ -237,37 +236,6 @@ def submit_answer(request):
     ques.status = True
     ques.save()
     return HttpResponse('success', content_type='application/json; charset=utf-8')
-
-def testanswer(request):
-    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
-    token_result = requests.post(token_url)
-    print 'token_result:', token_result.text
-    access_token = json.loads(token_result.text)['access_token']
-    print 'access_token:', access_token
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
-    dic = {}
-    dic["touser"] = 'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI'
-    dic["msgtype"] = "text"
-    dic.setdefault("text", {})
-    str1 = quote(str('你是我的'))
-    print str1
-    dic["text"]["content"] = str1
-    headers = {'content-type': 'application/json; charset=utf-8'}
-    print 'dic:', dic
-    print 'url:', url
-    datatmp = json.dumps(dic)
-    data1 = unquote(datatmp)
-    print 'datatmp:',datatmp
-    #datatmp.replace(/"content":".*?"/,'content:"你是我的"')
-    #r = urllib2.Request(url=url, headers=headers, data=json.dumps(dic))
-    #req = urllib2.Request(url)  
-    #req.add_header('Content-Type', 'application/json') 
-    #r = urllib2.urlopen(req, json.dumps(dic))
-    #r = requests.post(url, json=dic, headers=headers)
-    r = requests.post(url, data=data1, headers=headers)
-    print 'resp:', r.text
-    return HttpResponse('success', content_type='application/json')
 
 def getPic(request):
     pname = request.GET.get('pname', None)
