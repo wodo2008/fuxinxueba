@@ -12,6 +12,8 @@ class Question(models.Model):
     ask_time = models.IntegerField(default=0)
     asker_openid = models.CharField(max_length=32,default='')
     grad_weixin_id = models.CharField(max_length=32)
+    class Meta:
+      ordering = ['-ask_time']
 
 class Answer(models.Model):
     aid = models.AutoField(primary_key=True)
@@ -19,6 +21,8 @@ class Answer(models.Model):
     content = models.TextField()
     answer_time = models.IntegerField(default=0)
     grad_weixin_id = models.CharField(max_length=32,default='')
+    class Meta:
+      ordering = ['-answer_time']
 
 class GradDetail(models.Model):
     gid = models.AutoField(primary_key=True)
