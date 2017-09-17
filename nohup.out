@@ -1272,3 +1272,134 @@ Not Found: /smallprogram/static/images/pic1.jpg
 [10/Sep/2017 04:42:50] "GET /smallprogram/static/images/1_5.jpg HTTP/1.0" 304 0
 [10/Sep/2017 04:42:55] "GET /smallprogram/static/images/2_5.jpg HTTP/1.0" 200 290550
 [10/Sep/2017 04:42:57] "GET /smallprogram/static/images/3_2.jpg HTTP/1.0" 200 243397
+[16/Sep/2017 02:33:39] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[16/Sep/2017 02:33:39] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1115
+[16/Sep/2017 02:33:41] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[16/Sep/2017 02:33:46] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1127
+[16/Sep/2017 02:33:50] "POST /smallprogram/submit_question?signature=d2824beb18c86a2016ca684e19392be34e51a0b5&timestamp=1505529230&nonce=658526304 HTTP/1.0" 200 7
+[16/Sep/2017 02:33:58] "POST /smallprogram/submit_question?signature=46bdc5bd8f57cb159e5623e5d6550ff6f79414e4&timestamp=1505529238&nonce=1889589382 HTTP/1.0" 200 7
+[16/Sep/2017 02:45:06] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[16/Sep/2017 02:45:06] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1115
+[16/Sep/2017 02:45:08] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[16/Sep/2017 02:45:11] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1127
+[16/Sep/2017 02:45:14] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=3 HTTP/1.0" 200 989
+[16/Sep/2017 02:45:15] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=4 HTTP/1.0" 200 1086
+[16/Sep/2017 02:45:16] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=5 HTTP/1.0" 200 391
+[16/Sep/2017 02:45:48] "POST /smallprogram/submit_question?signature=893cef74ead9e2bd75c49bae8cb40dbdaec7418a&timestamp=1505529948&nonce=2106962105 HTTP/1.0" 200 7
+[16/Sep/2017 02:46:37] "POST /smallprogram/submit_question?signature=a7bd9b882dd4873854c15f5fa1191be8e6eb4696&timestamp=1505529997&nonce=444731305 HTTP/1.0" 200 7
+[17/Sep/2017 02:28:16] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1115
+[17/Sep/2017 02:28:16] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 02:28:17] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 02:28:37] "POST /smallprogram/submit_question?signature=de50aeb699063c10038b86f44aff6079e92c787a&timestamp=1505615317&nonce=2011567275 HTTP/1.0" 200 7
+[17/Sep/2017 06:15:03] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 06:15:03] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1115
+[17/Sep/2017 06:15:03] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 06:15:09] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1127
+[17/Sep/2017 06:15:26] "POST /smallprogram/submit_question?signature=66ad95d6e82d208a0c4d3f9d3b5853722af43e27&timestamp=1505628926&nonce=923876925 HTTP/1.0" 200 7
+[17/Sep/2017 06:30:27] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 06:30:27] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1721
+[17/Sep/2017 06:30:28] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:21:41] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:21:41] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1721
+[17/Sep/2017 07:21:42] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:21:48] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=90 HTTP/1.0" 200 196
+[17/Sep/2017 07:21:55] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[17/Sep/2017 07:21:56] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:21:56] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:21:56] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:23:00] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:23:00] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1129
+[17/Sep/2017 07:23:00] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:23:03] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1147
+[17/Sep/2017 07:23:06] "POST /smallprogram/submit_question?signature=539bdc020aa9d38f575703a8acf9618fc314feb7&timestamp=1505632986&nonce=2014587578 HTTP/1.0" 200 7
+[17/Sep/2017 07:23:24] "POST /smallprogram/submit_question?signature=59dea48dfe74697d7c31220731cc47b9da0f6dc7&timestamp=1505633004&nonce=1729744651 HTTP/1.0" 200 7
+[17/Sep/2017 07:23:42] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:23:42] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1129
+[17/Sep/2017 07:23:43] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:24:06] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1741
+[17/Sep/2017 07:24:06] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:24:07] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:24:08] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=95 HTTP/1.0" 200 216
+[17/Sep/2017 07:24:18] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[17/Sep/2017 07:24:19] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:24:19] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:24:19] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:24:55] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:24:58] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:25:36] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:25:36] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1169
+[17/Sep/2017 07:25:36] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:26:43] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:26:43] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:26:44] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:26:52] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=94 HTTP/1.0" 200 196
+[17/Sep/2017 07:28:29] "POST /smallprogram/submit_question?signature=014a56c47068eb7d379e2ca4780f089dbde2cd0c&timestamp=1505633309&nonce=245389679 HTTP/1.0" 200 7
+[17/Sep/2017 07:29:10] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:29:10] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1169
+[17/Sep/2017 07:29:11] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:29:13] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1137
+[17/Sep/2017 07:29:21] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=3 HTTP/1.0" 200 971
+[17/Sep/2017 07:29:22] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=4 HTTP/1.0" 200 1050
+[17/Sep/2017 07:29:23] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=5 HTTP/1.0" 200 621
+[17/Sep/2017 07:29:32] "POST /smallprogram/submit_question?signature=93d2f2dd72bde972d11961f4cd12af4abd3c5f79&timestamp=1505633372&nonce=55004501 HTTP/1.0" 200 7
+[17/Sep/2017 07:29:43] "POST /smallprogram/submit_question?signature=e54827de7daef39295f81d1dcc4e88128d0a57c7&timestamp=1505633383&nonce=481457627 HTTP/1.0" 200 7
+[17/Sep/2017 07:29:49] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:29:49] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1741
+[17/Sep/2017 07:29:49] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:29:56] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=97 HTTP/1.0" 200 205
+[17/Sep/2017 07:30:07] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:30:07] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1741
+[17/Sep/2017 07:30:08] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:30:11] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=96 HTTP/1.0" 200 208
+[17/Sep/2017 07:30:11] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 216
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 16, 2017 - 02:19:51
+Django version 1.11.3, using settings 'fuxinxueba.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505529230, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'MsgId': 6466198836507045581, u'ToUserName': u'gh_37cb4397965e', u'Content': u'\u5728\u5417', u'MsgType': u'text', u'CreateTime': 1505529237}
+ques_grad_str: Tobe_Lu|在吗
+在吗 1505529238 oYZH-0KoRRdqHNbLv-zdjF0ZGChQ Tobe_Lu
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505529948, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505529997, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505615317, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0KoRRdqHNbLv-zdjF0ZGChQ', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505628926, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+token_result: {"access_token":"mJbHJZ_NtdYwsLmFDloPCJwGdP43tdUrG0zSOOVbXNpgiJT6SQ5Is1-T3J6UbtcCctwdAwH0dNmPFgC25_xil6T52Y7EHo-w-L_4oy4pE5gvFfDBJHFbPRVhEjPG1PHeQQSjAJAGGI","expires_in":7200}
+access_token: mJbHJZ_NtdYwsLmFDloPCJwGdP43tdUrG0zSOOVbXNpgiJT6SQ5Is1-T3J6UbtcCctwdAwH0dNmPFgC25_xil6T52Y7EHo-w-L_4oy4pE5gvFfDBJHFbPRVhEjPG1PHeQQSjAJAGGI
+dic: {u'msgtype': u'text', u'touser': u'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI', u'text': {u'content': '%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%B5%8B%E8%AF%95%E5%9B%9E%E7%AD%94'}}
+resp: {"errcode":0,"errmsg":"ok"}
+param_data: {u'FromUserName': u'oYZH-0LSz8UKhEx_gHlIcPlLC18Q', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505632986, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0LSz8UKhEx_gHlIcPlLC18Q', u'MsgId': 6466644512378499286, u'ToUserName': u'gh_37cb4397965e', u'Content': u'\u6d4b\u8bd5\u63d0\u95eeby\u82a6', u'MsgType': u'text', u'CreateTime': 1505633004}
+ques_grad_str: Tobe_Lu|测试提问by芦
+测试提问by芦 1505633004 oYZH-0LSz8UKhEx_gHlIcPlLC18Q Tobe_Lu
+token_result: {"access_token":"90kfnosBwJp7gyXHb0yhRkUzNOaOYh1ONKtt5Tw4j38Ye7SdpyfEXzdYfC0ySiKsRIdXqg-fll0cDGYihjEWvyTrBcuRsyH0kctWgqwQMgOcEP9N7tEhytGrYmZzz7amXAReACAJMD","expires_in":7200}
+access_token: 90kfnosBwJp7gyXHb0yhRkUzNOaOYh1ONKtt5Tw4j38Ye7SdpyfEXzdYfC0ySiKsRIdXqg-fll0cDGYihjEWvyTrBcuRsyH0kctWgqwQMgOcEP9N7tEhytGrYmZzz7amXAReACAJMD
+dic: {u'msgtype': u'text', u'touser': u'oYZH-0LSz8UKhEx_gHlIcPlLC18Q', u'text': {u'content': '%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98by%E8%8A%A6'}}
+resp: {"errcode":0,"errmsg":"ok"}
+param_data: {u'FromUserName': u'oYZH-0Cn4uC5bDIyI5ObcnWlKFZI', u'MsgId': 6466645822343524704, u'ToUserName': u'gh_37cb4397965e', u'Content': u'\u6d4b\u8bd5\u95ee\u9898', u'MsgType': u'text', u'CreateTime': 1505633309}
+ques_grad_str: Tobe_Lu|测试问题
+测试问题 1505633309 oYZH-0Cn4uC5bDIyI5ObcnWlKFZI Tobe_Lu
+param_data: {u'FromUserName': u'oYZH-0LSz8UKhEx_gHlIcPlLC18Q', u'ToUserName': u'gh_37cb4397965e', u'CreateTime': 1505633372, u'MsgType': u'event', u'SessionFrom': u'Tobe_Lu', u'Event': u'user_enter_tempsession'}
+param_data: {u'FromUserName': u'oYZH-0LSz8UKhEx_gHlIcPlLC18Q', u'MsgId': 6466646140171104624, u'ToUserName': u'gh_37cb4397965e', u'Content': u'\u6d4b\u8bd5Gwenbyzhu', u'MsgType': u'text', u'CreateTime': 1505633383}
+ques_grad_str: Tobe_Lu|测试Gwenbyzhu
+测试Gwenbyzhu 1505633383 oYZH-0LSz8UKhEx_gHlIcPlLC18Q Tobe_Lu
+token_result: {"access_token":"PDW5Lplpk01eA[17/Sep/2017 07:30:24] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[17/Sep/2017 07:30:25] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:30:25] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1730
+[17/Sep/2017 07:30:25] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:31:06] "GET /smallprogram/get_question?grad_weixin_id=Tobe_Lu&qid=97 HTTP/1.0" 200 205
+[17/Sep/2017 07:31:45] "POST /smallprogram/submit_answer HTTP/1.0" 200 7
+[17/Sep/2017 07:31:46] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:31:46] "GET /smallprogram/get_grad_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1550
+[17/Sep/2017 07:31:46] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:35:06] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=1 HTTP/1.0" 200 1168
+[17/Sep/2017 07:35:06] "GET /smallprogram/getGradDetail?grad_weixin_id=Tobe_Lu HTTP/1.0" 200 216
+[17/Sep/2017 07:35:07] "GET /smallprogram/getPic?pname=img/Tobe_Lu.jpg HTTP/1.0" 200 62392
+[17/Sep/2017 07:35:14] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=2 HTTP/1.0" 200 1154
+[17/Sep/2017 07:35:17] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=3 HTTP/1.0" 200 971
+[17/Sep/2017 07:35:19] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=4 HTTP/1.0" 200 1020
+[17/Sep/2017 07:35:21] "GET /smallprogram/get_stu_question_list?grad_weixin_id=Tobe_Lu&pageSize=10&pageNo=5 HTTP/1.0" 200 841
+[17/Sep/2017 07:35:40] "POST /smallprogram/submit_question?signature=b10563c6d634a1b5967ae040c590787039ff7652&timestamp=1505633740&nonce=527819660 HTTP/1.0" 200 7
