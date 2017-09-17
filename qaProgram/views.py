@@ -221,16 +221,18 @@ def submit_answer(request):
     dic["touser"] = ques.asker_openid
     dic["msgtype"] = "text"
     dic.setdefault("text",{})
-    dic["text"]["content"] = quote(str(content))
+    question = ques.content
+    anContextMsg = '问题：\n' + question + '\n答案：\n' + content
+    dic["text"]["content"] = quote(str(anContextMsg))
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:',dic
     datatmp = json.dumps(dic)
     r = requests.post(url,data=unquote(datatmp),headers=headers)
     print 'resp:',r.text
-    question = ques.content
+
     dic = {}
     dic['qid'] = qid
-    dic['content'] = '问题：\n' + question + '\n答案：\n' + content
+    dic['content'] = content
     dic['answer_time'] = answer_time
     dic['grad_weixin_id'] = grad_weixin_id
     Answer.objects.create(**dic)
