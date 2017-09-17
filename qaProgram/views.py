@@ -201,7 +201,6 @@ def submit_question(request):
     dic["touser"] = asker_openid
     dic["msgtype"] = "text"
     dic.setdefault("text", {})
-    question = ques.content
     anContextMsg = '您的问题已经提交，我们将在48小时内给您回复！'
     dic["text"]["content"] = quote(str(anContextMsg))
     headers = {'content-type': 'application/json; charset=utf-8'}
