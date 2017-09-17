@@ -227,9 +227,10 @@ def submit_answer(request):
     datatmp = json.dumps(dic)
     r = requests.post(url,data=unquote(datatmp),headers=headers)
     print 'resp:',r.text
+    question = ques.content
     dic = {}
     dic['qid'] = qid
-    dic['content'] = content
+    dic['content'] = '问题：\n' + question + '\n答案：\n' + content
     dic['answer_time'] = answer_time
     dic['grad_weixin_id'] = grad_weixin_id
     Answer.objects.create(**dic)
