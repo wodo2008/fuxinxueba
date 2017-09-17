@@ -189,6 +189,26 @@ def submit_question(request):
     question.asker_openid = asker_openid
     question.grad_weixin_id = grad_weixin_id
     question.save()
+    #后台消息
+    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
+                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
+    token_result = requests.post(token_url)
+    print 'token_result:', token_result.text
+    access_token = json.loads(token_result.text)['access_token']
+    print 'access_token:', access_token
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
+    dic = {}
+    dic["touser"] = asker_openid
+    dic["msgtype"] = "text"
+    dic.setdefault("text", {})
+    question = ques.content
+    anContextMsg = '您的问题已经提交，我们将在48小时内给您回复！'
+    dic["text"]["content"] = quote(str(anContextMsg))
+    headers = {'content-type': 'application/json; charset=utf-8'}
+    print 'dic:', dic
+    datatmp = json.dumps(dic)
+    r = requests.post(url, data=unquote(datatmp), headers=headers)
+    print 'resp:', r.text
     #
     # dic = {}
     # dic['content'] = content
