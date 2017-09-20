@@ -191,7 +191,7 @@ def submit_question(request):
     question.save()
     #后台消息
     token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
+                '&appid=wx4b5f848764065052&secret=d9cb7dbd82f0e79dc811bf2598770247'
     token_result = requests.post(token_url)
     print 'token_result:', token_result.text
     access_token = json.loads(token_result.text)['access_token']
