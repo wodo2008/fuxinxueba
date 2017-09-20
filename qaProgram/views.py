@@ -156,6 +156,30 @@ def getGradDetail(request):
     response_data['success'] = 'Ok'
     return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
 
+def getGradList(request):
+    pageNo = int(request.GET.get('pageNo', 1))
+    pageSize = int(request.GET.get('pageSize', 10))
+    data = GradDetail.objects.all()
+    totalNum = GradDetail.objects.filter().count()
+    paginator = Paginator(data, int(pageSize))
+    try:
+        pdata = paginator.page(int(pageNo))
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        pdata = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        pdata = paginator.page(paginator.num_pages)
+    s = serializer(pdata)
+    response_data = {}
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    hasmore = False
+    if pageNo * pageSize < totalNum:
+        hasmore = True
+    response_data['hasmore'] = hasmore
+    return HttpResponse(json.dumps(response_data), content_type='application/json; charset=utf-8')
+
 
 def submit_question(request):
     # request.REQUEST.get('name')
