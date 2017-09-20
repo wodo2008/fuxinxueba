@@ -295,6 +295,16 @@ def getPic(request):
     image_data = open(pic_path, "rb").read()
     return HttpResponse(image_data, content_type="image/png")
 
+def getTitle(request):
+    dataDict = {}
+    dataDict['title'] = u'毕业生列表'
+    dataDict['subtitle'] = u'持续更新中'
+    s = serializer(dataDict)
+    response_data = {}
+    response_data['data'] = s
+    response_data['success'] = 'Ok'
+    return HttpResponse(json.dumps(response_data),content_type='application/json; charset=utf-8')
+
 def checkSignature(signature,timestamp,nonce):
     token = 'datongxueba3'
     print signature,timestamp,nonce
