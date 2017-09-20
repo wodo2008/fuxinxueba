@@ -295,7 +295,7 @@ def getPic(request):
     image_data = open(pic_path, "rb").read()
     return HttpResponse(image_data, content_type="image/png")
 
-def getTitle(request):
+def getTitles(request):
     dataDict = {}
     dataDict['title'] = u'毕业生列表'
     dataDict['subtitle'] = u'持续更新中'

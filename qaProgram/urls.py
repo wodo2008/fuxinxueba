@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^smallprogram/getGradList',views.getGradList),
     url(r'^smallprogram/getPic',views.getPic),
     url(r'^smallprogram/get_question',views.get_question),
+    url(r'^smallprogram/getTitles',views.getTitles),
 ]
