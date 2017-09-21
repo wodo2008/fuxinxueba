@@ -235,7 +235,7 @@ def submit_question(request):
     question.grad_weixin_id = grad_weixin_id
     question.save()
     dic["touser"] = asker_openid
-    anContextMsg = '您的问题已经提交，我们将在48小时内给您回复！' % (gdetail.name)
+    anContextMsg = '您的问题已经提交给%s，我们将在48小时内给您回复！' % (gdetail.name)
     dic["text"]["content"] = quote(str(anContextMsg))
     print 'dic:', dic
     datatmp = json.dumps(dic)
