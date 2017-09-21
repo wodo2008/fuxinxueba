@@ -193,9 +193,27 @@ def submit_question(request):
         if checkSignature(signature, timestamp, nonce):
             return HttpResponse(echostr, content_type='application/json; charset=utf-8')
     print 'param_data:',param_data
+    #后台消息
+    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
+                '&appid=wx4b5f848764065052&secret=cb14b87ff1d1a5d1b69e4ea65ad63ccc'
+    token_result = requests.post(token_url)
+    print 'token_result:', token_result.text
+    access_token = json.loads(token_result.text)['access_token']
+    print 'access_token:', access_token
+    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
+    dic = {}
+    dic["msgtype"] = "text"
+    dic.setdefault("text", {})
+    headers = {'content-type': 'application/json; charset=utf-8'}
     mgRedis = init_redis('127.0.0.1', 6379, 0)
     if param_data['MsgType'] == 'event':
         mgRedis.set(param_data['FromUserName'],param_data['SessionFrom'])
+        anContextMsg = '您正在向%s提问' % param_data['SessionFrom'] 
+        dic["text"]["content"] = quote(str(anContextMsg))
+        dic["touser"] = param_data['FromUserName']
+        print 'dic:', dic
+        datatmp = json.dumps(dic)
+        r = requests.post(url, data=unquote(datatmp), headers=headers)
         return HttpResponse('success', content_type='application/json; charset=utf-8')
     elif param_data['MsgType'] == 'text':
         content = param_data.get('Content', '')
@@ -213,21 +231,9 @@ def submit_question(request):
     question.asker_openid = asker_openid
     question.grad_weixin_id = grad_weixin_id
     question.save()
-    #后台消息
-    token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx4b5f848764065052&secret=d9cb7dbd82f0e79dc811bf2598770247'
-    token_result = requests.post(token_url)
-    print 'token_result:', token_result.text
-    access_token = json.loads(token_result.text)['access_token']
-    print 'access_token:', access_token
-    url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
-    dic = {}
     dic["touser"] = asker_openid
-    dic["msgtype"] = "text"
-    dic.setdefault("text", {})
-    anContextMsg = '您的问题已经提交，我们将在48小时内给您回复！'
+    anContextMsg = '您的问题已经提交给，我们将在48小时内给您回复！'
     dic["text"]["content"] = quote(str(anContextMsg))
-    headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:', dic
     datatmp = json.dumps(dic)
     r = requests.post(url, data=unquote(datatmp), headers=headers)
@@ -254,7 +260,7 @@ def submit_answer(request):
     grad_weixin_id = param_data.get('grad_weixin_id', '')
     ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
     token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx5b9b8be6473e5e63&secret=d6b4a2d9c6c517be408d97260384f489'
+                '&appid=wx4b5f848764065052&secret=cb14b87ff1d1a5d1b69e4ea65ad63ccc'
     token_result = requests.post(token_url)
     print 'token_result:',token_result.text
     access_token = json.loads(token_result.text)['access_token']
