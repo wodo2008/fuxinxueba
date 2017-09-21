@@ -227,6 +227,7 @@ def submit_question(request):
     print 'ques_grad_str:',ques_grad_str
     mgRedis.rpush('ques_grad_mq',ques_grad_str)
     print content,ask_time,asker_openid,grad_weixin_id
+    gdetail = GradDetail.objects.get(grad_weixin_id=grad_weixin_id)
     question = Question()
     question.content = content
     question.ask_time = ask_time
@@ -234,7 +235,7 @@ def submit_question(request):
     question.grad_weixin_id = grad_weixin_id
     question.save()
     dic["touser"] = asker_openid
-    anContextMsg = '您的问题已经提交给，我们将在48小时内给您回复！'
+    anContextMsg = '您的问题已经提交，我们将在48小时内给您回复！' % (gdetail.name)
     dic["text"]["content"] = quote(str(anContextMsg))
     print 'dic:', dic
     datatmp = json.dumps(dic)
