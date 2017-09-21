@@ -276,8 +276,8 @@ def submit_answer(request):
     question = ques.content
     ask_time = ques.ask_time
     gdetail = GradDetail.objects.get(grad_weixin_id=grad_weixin_id)
-    anContextMsg = '问题：\n' + question + '\n提问时间：' + time.strftime('%Y-%m-%d',time.localtime(ask_time)) \
-                   +'\n回答者：' + gdetail.name +'\n答案：\n' + content
+    anContextMsg = '问题：' + question + '\n提问时间：' + time.strftime('%Y-%m-%d',time.localtime(ask_time)) \
+                   +'\n回答者：' + gdetail.name +'\n答案：' + content
     dic["text"]["content"] = quote(str(anContextMsg))
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:',dic
