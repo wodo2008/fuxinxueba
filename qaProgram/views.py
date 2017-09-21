@@ -206,9 +206,11 @@ def submit_question(request):
     dic.setdefault("text", {})
     headers = {'content-type': 'application/json; charset=utf-8'}
     mgRedis = init_redis('127.0.0.1', 6379, 0)
+
     if param_data['MsgType'] == 'event':
         mgRedis.set(param_data['FromUserName'],param_data['SessionFrom'])
-        anContextMsg = '您正在向%s提问' % param_data['SessionFrom'] 
+        gdetail = GradDetail.objects.get(grad_weixin_id=param_data['SessionFrom'])
+        anContextMsg = '您正在向%s提问' % gdetail.name
         dic["text"]["content"] = quote(str(anContextMsg))
         dic["touser"] = param_data['FromUserName']
         print 'dic:', dic
@@ -271,7 +273,10 @@ def submit_answer(request):
     dic["msgtype"] = "text"
     dic.setdefault("text",{})
     question = ques.content
-    anContextMsg = '问题：\n' + question + '\n答案：\n' + content
+    ask_time = ques.ask_time
+    gdetail = GradDetail.objects.get(grad_weixin_id=grad_weixin_id)
+    anContextMsg = '问题：\n' + question + '\n提问时间：' + time.strftime('%Y-%m-%d',time.localtime(ask_time)) \
+                   +'\n回答者：' + gdetail.name +'\n答案：\n' + content
     dic["text"]["content"] = quote(str(anContextMsg))
     headers = {'content-type': 'application/json; charset=utf-8'}
     print 'dic:',dic
