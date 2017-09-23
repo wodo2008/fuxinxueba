@@ -6,5 +6,5 @@
 nohup.out
 *.pyc
 *.xml
-img/
-static/images/*
+img/*
+static/*
