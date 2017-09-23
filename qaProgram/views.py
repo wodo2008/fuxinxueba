@@ -195,7 +195,7 @@ def submit_question(request):
     print 'param_data:',param_data
     #后台消息
     token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx4b5f848764065052&secret=cb14b87ff1d1a5d1b69e4ea65ad63ccc'
+                '&appid=wx4b5f848764065052&secret=6a4a2f1420937da2133c259a25f9aada'
     token_result = requests.post(token_url)
     print 'token_result:', token_result.text
     access_token = json.loads(token_result.text)['access_token']
@@ -263,7 +263,7 @@ def submit_answer(request):
     grad_weixin_id = param_data.get('grad_weixin_id', '')
     ques = Question.objects.get(qid=qid, grad_weixin_id=grad_weixin_id)
     token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential' \
-                '&appid=wx4b5f848764065052&secret=cb14b87ff1d1a5d1b69e4ea65ad63ccc'
+                '&appid=wx4b5f848764065052&secret=6a4a2f1420937da2133c259a25f9aada'
     token_result = requests.post(token_url)
     print 'token_result:',token_result.text
     access_token = json.loads(token_result.text)['access_token']
