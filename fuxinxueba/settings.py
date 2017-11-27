@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'smallProgram',
     'qaProgram',
+    'user_phone_auth',
 ]
 
 MIDDLEWARE = [
