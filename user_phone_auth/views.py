@@ -37,4 +37,4 @@ def submitCode(request):
     return HttpResponse(json.dumps(retData), content_type='application/json; charset=utf-8')
 
 def index(request):
-    return render(request, 'index.html', content_type='application/xhtml+xml')
+    return render(request, 'index.html')
