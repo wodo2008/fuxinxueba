@@ -7,7 +7,7 @@ import json
 from sendMsgUtil import *
 import random
 import time
-from user_phone_auth import UserIdentiCode
+from user_phone_auth.models import UserIdentiCode
 # Create your views here.
 
 def getIdentiCode(request):
