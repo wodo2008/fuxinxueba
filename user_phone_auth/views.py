@@ -17,7 +17,7 @@ def getIdentiCode(request):
     identiCode = random.randint(1000,9999)
     text = "【大同学吧】您的验证码是%s" % identiCode
 
-    uic = UserIdentiCode.get(phoneNum=phoneNum)
+    uic = UserIdentiCode.objects.get(phoneNum=phoneNum)
     if not uic:
         uic = UserIdentiCode()
     uic.phoneNum = phoneNum
