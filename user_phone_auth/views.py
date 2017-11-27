@@ -11,7 +11,8 @@ from user_phone_auth.models import UserIdentiCode
 # Create your views here.
 
 def getIdentiCode(request):
-    phoneNum = request.POST.get('phoneNum','')
+    print request
+    phoneNum = request.POST.get('phone','')
     apikey = '1cc4281019e663972d7d0f4cca759942'
     identiCode = random.randint(1000,9999)
     text = "【大同学吧】您的验证码是%s" % identiCode
