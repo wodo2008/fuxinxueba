@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>【免费课程报名】数字逻辑仿真工具实践</title>    
+    <script type="text/javascript" src="js/verification.js"></script>
+    <link href="css/index.css" rel="stylesheet"></head>
+	<body>
+		<form id="myForm"></form>
+		<!--面板-->
+		<div id="panel">
+			<div class="top_img">
+				<img src="img/ecourse.png"/>
+				<p>|</p>
+				<img src="img/datongxueba.png"/>
+			</div>
+		    <!--面板的头部-->		    
+		    <div class="panel-top">
+		    	<img src="img/free.png"/>
+		        <h4>数字逻辑仿真工具实践</h4>
+		    </div>    <!--面板的主要内容-->
+		    <div class="panel-content">
+		        <div class="int">
+		            <label><img src="img/phone.png" ></label>
+		            <input id="phone" class="phone_input" type="text" placeholder="您的手机号/用户名" form="myForm">
+		        </div>
+		        <div class="int_2">
+		    		<label><img src="img/verification.png" ></label>
+		        	<input class="verification" id="code" type="password" placeholder="输入验证码" form="myForm">	    
+		        	<button class="get-code" onclick="getCode(this)" id="J_getCode">获取验证码</button>
+		            <button class="reset-code" id="J_resetCode" style="display:none;"><span id="J_second">30</span>秒后重发</button>
+		        </div>
+		        <div class="login">
+		            <button onclick="registerNow(this)">立即报名</button>
+		        </div>
+		        <div class="reg">* 填入号码将用于接受课程信息，以及领取课程所用</div>   
+		    </div>
+		</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	</body>
+</html>

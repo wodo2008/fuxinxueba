@@ -1,0 +1,3 @@
+recursive-exclude tests *
+include LICENSE README.rst tox.ini
+recursive-include docs *

@@ -8,5 +8,6 @@ class UserIdentiCode(models.Model):
     phoneNum = models.CharField(max_length=32,default='')
     identiCode = models.CharField(max_length=32,default='')
     timeStamp = models.TimeField
+    isLegal = models.BooleanField
     def __str__(self):
         return self.phoneNum
