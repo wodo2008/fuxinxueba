@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^smallprogram/static/(?P<path>.*)$', django.views.static.serve,{'document_root':settings.STATIC_ROOT}),
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
+    url(r'', include('user_phone_auth.urls')),
 ]

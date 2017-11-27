@@ -9,6 +9,8 @@ class Company(models.Model):
     logo_id = models.IntegerField
     name = models.CharField(max_length=32)
     info = models.TextField()
+    def __str__(self):
+        return self.name
 
 
 class Eec_alumni(models.Model):
@@ -22,6 +24,8 @@ class Eec_alumni(models.Model):
     intro = models.TextField()
     degree = models.CharField(max_length=32)
     interview_info = models.TextField()
+    def __str__(self):
+        return self.name
 
 class Push_position(models.Model):
     pid = models.AutoField(primary_key=True)
@@ -36,3 +40,5 @@ class Push_position(models.Model):
     keywords = models.CharField(max_length=32)
     requirement = models.TextField()
     pluses = models.TextField()
+    def __str__(self):
+        return self.name
