@@ -7,7 +7,7 @@ import time
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from userPhoneVerify.models import User_identi_code
+from qaProgram.models import User_identi_code
 from userPhoneVerify.sendMsgUtil import *
 
 

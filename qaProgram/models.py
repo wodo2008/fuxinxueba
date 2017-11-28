@@ -48,3 +48,12 @@ class Picture(models.Model):
     def __str__(self):
         return self.name
 
+class User_identi_code(models.Model):
+    id = models.AutoField(primary_key=True)
+    phoneNum = models.CharField(max_length=32,default='')
+    identiCode = models.CharField(max_length=32,default='')
+    timeStamp = models.TimeField
+    isLegal = models.BooleanField
+    def __str__(self):
+        return self.phoneNum
+
