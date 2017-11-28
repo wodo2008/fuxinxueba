@@ -7,7 +7,7 @@ import time
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from userPhoneAuth.models import UserIdentiCode
+from userPhoneAuth.models import unicode_literals
 from userPhoneAuth.sendMsgUtil import *
 
 
@@ -19,9 +19,9 @@ def getIdentiCode(request):
     apikey = '1cc4281019e663972d7d0f4cca759942'
     identiCode = random.randint(1000,9999)
     text = "【大同学吧】您的验证码是%s" % identiCode
-    uic = UserIdentiCode.objects.get(phoneNum=phoneNum)
+    uic = unicode_literals.objects.get(phoneNum=phoneNum)
     if not uic:
-        uic = UserIdentiCode()
+        uic = unicode_literals()
     uic.phoneNum = phoneNum
     uic.identiCode = identiCode
     uic.timeStamp = time.time()

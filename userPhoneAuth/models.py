@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-class UserIdentiCode(models.Model):
+class User_identi_code(models.Model):
     id = models.AutoField(primary_key=True)
     phoneNum = models.CharField(max_length=32,default='')
     identiCode = models.CharField(max_length=32,default='')
