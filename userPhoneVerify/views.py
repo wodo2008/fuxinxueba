@@ -19,9 +19,9 @@ def getIdentiCode(request):
     apikey = '1cc4281019e663972d7d0f4cca759942'
     identiCode = random.randint(1000,9999)
     text = "【大同学吧】您的验证码是%s" % identiCode
-    uic = User_identi_code.objects.get(phoneNum=phoneNum)
-    if not uic:
-        uic = User_identi_code()
+    # uic = User_identi_code.objects.get(phoneNum=phoneNum)
+    # if not uic:
+    uic = User_identi_code()
     uic.phoneNum = phoneNum
     uic.identiCode = identiCode
     uic.timeStamp = time.time()
