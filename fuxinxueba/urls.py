@@ -20,7 +20,7 @@ from fuxinxueba import settings
 from smallProgram import views
 
 urlpatterns = [
-    # url(r'^smallprogram/admin/', admin.site.urls),
+    url(r'^smallprogram/admin/', admin.site.urls),
     # url(r'^smallprogram/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     # url(r'^userpa/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     url(r'', include('smallProgram.urls')),
