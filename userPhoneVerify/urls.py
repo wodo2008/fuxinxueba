@@ -1,8 +1,6 @@
-from userPhoneAuth import views
-from django.conf.urls import url
 from django.conf.urls import url
 
-from userPhoneAuth import views
+from userPhoneVerify import views
 
 urlpatterns = [
     url(r'^userpa/getIdentiCode', views.getIdentiCode),

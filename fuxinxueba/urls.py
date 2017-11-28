@@ -25,5 +25,5 @@ urlpatterns = [
     #url(r'^userpa/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
-    url(r'', include('userPhoneAuth.urls')),
+    url(r'', include('userPhoneVerify.urls')),
 ]
