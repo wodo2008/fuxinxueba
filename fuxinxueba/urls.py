@@ -21,8 +21,8 @@ from smallProgram import views
 
 urlpatterns = [
     url(r'^smallprogram/admin/', admin.site.urls),
-    url(r'^smallprogram/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
-    url(r'^userpa/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
+    #url(r'^smallprogram/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
+    #url(r'^userpa/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
     url(r'', include('userPhoneAuth.urls')),
