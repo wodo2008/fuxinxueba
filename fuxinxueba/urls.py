@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django import views
+import django
 from fuxinxueba import settings
 from smallProgram import views
 
 urlpatterns = [
     url(r'^smallprogram/admin/', admin.site.urls),
-    url(r'^smallprogram/static/(?P<path>.*)$', views.static.serve,{'document_root':settings.STATIC_ROOT}),
-    url(r'^userpa/static/(?P<path>.*)$', views.static.serve,{'document_root':settings.STATIC_ROOT}),
+    url(r'^smallprogram/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
+    url(r'^userpa/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
     url(r'', include('user_phone_auth.urls')),
