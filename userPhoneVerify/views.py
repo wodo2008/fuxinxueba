@@ -29,14 +29,17 @@ def getIdentiCode(request):
     uic.save()
     print '%s:%s' % (phoneNum,text)
     print send_sms(apikey,text,phoneNum)
-    retData = {"sucess":"Ok","data":""}
+    retData = {"success":"Ok","data":""}
     return HttpResponse(json.dumps(retData), content_type='application/json; charset=utf-8')
 
 def submitCode(request):
     phoneNum = request.POST.get('phoneNum', '')
     identiCode = request.POST.get('identiCode', '')
-    retData = {"sucess": "Ok", "data": ""}
+    retData = {"success": "Ok", "data": ""}
     return HttpResponse(json.dumps(retData), content_type='application/json; charset=utf-8')
 
 def index(request):
     return render(request, 'index.html')
+
+def qrcode(request):
+    return render(request, 'qrcode.html')
