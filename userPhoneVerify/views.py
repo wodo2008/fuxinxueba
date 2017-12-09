@@ -36,8 +36,8 @@ def getIdentiCode(request):
 
 def submitCode(request):
     retData = {"success": "False", "data": ""}
-    phoneNum = request.POST.get('phone', '')
-    identiCode = request.POST.get('code', '')
+    phoneNum = request.GET.get('phone', '')
+    identiCode = request.GET.get('code', '')
     mongo_conn = pymongo.MongoClient("mongodb://127.0.0.1:27017")
     user_identi_code = mongo_conn.eke.user_identi_code
     uicData = user_identi_code.find_one({'phoneNum':phoneNum})

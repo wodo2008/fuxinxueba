@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gx-vlnmk-h_qt7to5zp#1*a^kc#77g%xt^lymsb@3^=id^pm+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["106.14.220.141","www.fuxinxueba.com","0.0.0.0"]
 
@@ -54,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'fuxinxueba.urls'
+
 
 TEMPLATES = [
     {
