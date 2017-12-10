@@ -6,3 +6,4 @@ urlpatterns = [
     url(r'^smallprogram/saveansinfo',views.save_ans_info),
     url(r'^smallprogram/getpage',views.save_ans_info),
 ]
+

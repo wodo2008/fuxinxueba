@@ -1,3 +1,4 @@
+#!-*- coding: utf-8 -*-
 from questionnaire.ansModel import AnsModel
 from questionnaire.userModel import UserModel
 import time

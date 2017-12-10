@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'smallProgram',
     'qaProgram',
     'userPhoneVerify',
+    'questionnaire',
 ]
 
 MIDDLEWARE = [
