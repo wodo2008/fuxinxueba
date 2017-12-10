@@ -26,7 +26,7 @@ class UserModel(object):
             return False
         user_info['_id'] = self.get_user_index()
         self.user_table.save(user_info)
-        return self.get_user_index()
+        return user_info['_id']
 
 
     def get_user_info(self,user_id):
