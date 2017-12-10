@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'', include('smallProgram.urls')),
     url(r'', include('qaProgram.urls')),
     url(r'', include('userPhoneVerify.urls')),
+    url(r'',include('questionnaire.urls'))
 ]
