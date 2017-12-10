@@ -21,7 +21,5 @@ class QuestService(object):
         user_info = {}
         user_info['full_name'] = param.get('full_name','')
         user_info['chinese_name'] = param.get('chinese_name','')
-        user_info['snumber'] = param.get('snumber','')
+        user_info['stu_number'] = param.get('stu_number','')
         return self.user_obj.save_user_info(user_info)
-
-

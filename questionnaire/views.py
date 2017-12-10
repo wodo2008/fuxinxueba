@@ -26,3 +26,9 @@ def save_ans_info(request):
     ques_serv.save_ans(param)
     print 'res:',res
     return HttpResponse(json.dump(res),content_type='application/json;charset=utf-8')
+
+def get_page(request):
+    param = request.GET
+    print 'param:',param
+    pagename = param.get('pagename','')
+    return render(request, '%s.html' % pagename)
